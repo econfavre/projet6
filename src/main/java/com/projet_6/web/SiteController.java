@@ -54,13 +54,13 @@ public class SiteController {
 	}
 
 	@GetMapping("/edit")
-	public String edit(Model model, Long id) {
-		Site site = siteRepository.findById(id).get();
-		// if (p.isPresent()) {// vérifie si p est null ou non. Si il n'est pas null, je
-		// créer un objet Produit
-		// que j'initialise avec p et que j'envois par la suite dans le formulaire via
+	public String edit(Model model, Long siteId) {
+		Site site = siteRepository.findById(siteId).get();
+		// if (s.isPresent()) {// vérifie si s est null ou non. Si il n'est pas null, je
+		// créer un objet Site
+		// que j'initialise avec s et que j'envoie par la suite dans le formulaire via
 		// model.
-		// Produit produit = p.get();
+		// Site site = s.get();
 		model.addAttribute("site", site);
 		// }
 		return "EditSite"; // on redirige vers une nouvelle page de confirmation que l'on doit creee dan

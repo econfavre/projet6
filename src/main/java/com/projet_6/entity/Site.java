@@ -33,7 +33,6 @@ public class Site implements Serializable {
 	private int waysNumber;
 	@NotNull
 	private String cotation;
-	// private Blob image;
 
 	public Site() {
 		super();
@@ -42,6 +41,7 @@ public class Site implements Serializable {
 	public Site(Long siteId, String nameSite, String type, String orientation, String country, int sectorsNumber,
 			int waysNumber, String cotation) {
 		super();
+		this.siteId = siteId;
 		this.nameSite = nameSite;
 		this.type = type;
 		this.orientation = orientation;
@@ -49,7 +49,6 @@ public class Site implements Serializable {
 		this.sectorsNumber = sectorsNumber;
 		this.waysNumber = waysNumber;
 		this.cotation = cotation;
-		// this.image = image;
 	}
 
 	public Long getSiteId() {
@@ -83,14 +82,6 @@ public class Site implements Serializable {
 	public void setOrientation(String orientation) {
 		this.orientation = orientation;
 	}
-
-	// public Blob getImage() {
-	// return image;
-	// }
-
-	// public void setImage(Blob image) {
-	// this.image = image;
-	// }
 
 	public String getCountry() {
 		return country;

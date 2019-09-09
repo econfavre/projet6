@@ -6,89 +6,105 @@
 <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"
 	th:href="@{/css/bootstrap.min.css}" />
 <link rel="stylesheet" type="text/css" href="../css/style.css"
-	th:href="@{/css/style1.css}" />
+	th:href="@{/css/styleFormSite.css}" />
 </head>
 <body>
-	<div class="spacer col-md-6 col-xs-12">
-		<div class="panel panel-default">
-		
-			<div class="panel-heading">Saisie d'un site</div>
-			<form th:action="@{/save}" method="post">
-			<div class="panel-body">
-				
-					<div class="form-group">
-						<label class="control-label">Nom du site :</label> <input
-							class="form-control" type="text" name="nameSite"
-							th:value="${site.nameSite}"> <span class="text-danger"
-							th:errors="${site.nameSite}"></span>
-					</div>
-					<div class="form-group">
-						<label class="control-label">Type du site :</label> <input
-							class="form-control" type="text" name="type"
-							th:value="${site.type}"> <span class="text-danger"
-							th:errors="${site.type}"></span>
-					</div>
+	<body>
+	<div id="login">
+		<div class="container">
+			<div id="login-row"
+				class="row justify-content-center align-items-center">
+				<div id="login-column" class="col-md-6">
+					<div id="login-box" class="col-md-12">
+					<form th:action="@{/save}" method="POST">
+							<h3 class="text-center text-info">NOUVEAU SITE</h3>
+							<div class="form-group">
 
-					<div class="filter-group">
-						<label class="control-label">Orientation :</label><select
-							class="form-control" name="orientation"
-							th:value="${site.orientation}">
-							<option>Sud</option>
-							<option>Sud Est</option>
-							<option>Sud Ouest</option>
-							<option>Est</option>
-							<option>Ouest</option>
-							<option>Nord</option>
-							<option>Nord Est</option>
-							<option>Nord Ouest</option>
-						</select> <span class="text-danger" th:errors="${site.orientation}"></span>
+								<label for="nameSite" class="text-info">Nom du site:</label><br>
+								<input type="text" name="nameSite" th:value="${site.nameSite}"
+									id="nameSite" class="form-control"> <span class="red"
+									th:errors="${site.nameSite}"></span>
+							</div>
+							<div class="form-group">
+
+								<label for="type" class="text-info">Type du site:</label><br>
+								<input type="text" name="type" th:value="${site.type}" id="type"
+									class="form-control"> <span class="red"
+									th:errors="${site.type}"></span>
+							</div>
+							<div class="filter-group">
+								<label for="orientation" class="text-info">Orientation
+									du site:</label><br> <select name="orientation"
+									th:value="${site.orientation}" id="orientation"
+									class="form-control">
+									<option>Sud</option>
+									<option>Sud Est</option>
+									<option>Sud Ouest</option>
+									<option>Est</option>
+									<option>Ouest</option>
+									<option>Nord</option>
+									<option>Nord Est</option>
+									<option>Nord Ouest</option>
+								</select> <span class="text-danger" th:errors="${site.orientation}"></span>
+							</div>
+							<div class="filter-group">
+
+								<label for="country" class="text-info">Localisation du
+									site:</label><br> <select name="country"
+									th:value="${site.country}" id="country" class="form-control">
+									<option>France</option>
+									<option>Allemagne</option>
+									<option>Italie</option>
+									<option>Autriche</option>
+									<option>Angleterre</option>
+									<option>Belgique</option>
+									<option>Autre</option>
+								</select> <span class="text-danger" th:errors="${site.country}"></span>
+							</div>
+							<div class="form-group">
+
+								<label for="sectorsNumber" class="text-info">Nombre de
+									secteurs :</label><br> <input type="text" name="sectorsNumber"
+									th:value="${site.sectorsNumber}" id="sectorsNumber"
+									class="form-control"> <span class="red"
+									th:errors="${site.sectorsNumber}"></span>
+							</div>
+							<div class="form-group">
+
+								<label for="waysNumber" class="text-info">Nombre de
+									voies :</label><br> <input type="text" name="waysNumber"
+									th:value="${site.waysNumber}" id="waysNumber"
+									class="form-control"> <span class="red"
+									th:errors="${site.waysNumber}"></span>
+							</div>
+							<div class="filter-group">
+
+								<label for="cotation" class="text-info">Cotation du
+									site:</label><br> <select name="cotation"
+									th:value="${site.cotation}" id="cotation" class="form-control">
+									<option value="3a">3a</option>
+									<option value="3b">3b</option>
+									<option value="3c">3c</option>
+									<option value="4a">4a</option>
+									<option value="4b">4b</option>
+									<option value="4c">4c</option>
+									<option value="5a">5a</option>
+									<option value="5b">5b</option>
+									<option value="5c">5c</option>
+									<option value="6a">6a</option>
+									<option value="5b">6b</option>
+									<option value="5c">7c</option>
+								</select> <span class="text-danger" th:errors="${site.cotation}"></span>
+							</div>
+							<div>
+							<p></p>
+							<h1></h1>
+							<button type="submit" class="btn btn-primary">Enregistrer</button>
+							</div>
+						</form>
 					</div>
-					<div class="filter-group">
-						<label class="control-label">Pays :</label> <select
-							class="form-control" name="country" th:value="${site.country}">
-							<option>France</option>
-							<option>Allemagne</option>
-							<option>Italie</option>
-							<option>Autriche</option>
-							<option>Angleterre</option>
-							<option>Belgique</option>
-							<option>Autre</option>
-						</select> <span class="text-danger" th:errors="${site.country}"></span>
-					</div>
-					<div class="form-group">
-						<label class="control-label">Nombre de secteurs :</label> <input
-							class="form-control" type="text" name="sectorsNumber"
-							th:value="${site.sectorsNumber}"> <span
-							class="text-danger" th:errors="${site.sectorsNumber}"></span>
-					</div>
-					<div class="form-group">
-						<label class="control-label">Nombre de voies :</label> <input
-							class="form-control" type="text" name="waysNumber"
-							th:value="${site.waysNumber}"> <span class="text-danger"
-							th:errors="${site.waysNumber}"></span>
-					</div>
-					<div class="filter-group">
-						<label class="control-label">Cotation :</label> <select
-							class="form-control" name="cotation" th:value="${site.cotation}">
-							<option value="3a">3a</option>
-							<option value="3b">3b</option>
-							<option value="3c">3c</option>
-							<option value="4a">4a</option>
-							<option value="4b">4b</option>
-							<option value="4c">4c</option>
-							<option value="5a">5a</option>
-							<option value="5b">5b</option>
-							<option value="5c">5c</option>
-							<option value="6a">6a</option>
-							<option value="5b">6b</option>
-							<option value="5c">7c</option>
-						</select> <span class="text-danger" th:errors="${site.cotation}"></span>
-					</div>
+				</div>
 			</div>
-			<div>
-				<button type="submit" class="btn btn-primary">Créer</button>
-			</div>
-			</form>
 		</div>
 	</div>
 </body>
