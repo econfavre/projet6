@@ -1,47 +1,51 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="layout">
 <head>
-<meta charset="utf-8">
-<title>Creation du compte</title>
+<meta charset="utf-8" />
+<title>Création d'un nouveau compte</title>
+<link rel="stylesheet" type="text/css" href="../css/style.css"
+	th:href="@{/css/style.css}" />
+<script
+	src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
-<body>
-	<div class="container">
-		<div class="Back">
-			<i class="fa fa-arrow-left" onclick="Back()"></i>
-		</div>
-		<p class="h2 text-center">Creer son compte</p>
-		<form th:action="@{/memberSave}" method="post">
-			<!--  <div class="preview text-center">
-				<img class="preview-img"
-					src="http://simpleicon.com/wp-content/uploads/account.png"
-					alt="Preview Image" width="200" height="200" />
-				<div class="browse-button">
-					<i class="fa fa-pencil-alt"></i> <input class="browse-input"
-						type="file" required name="UploadedFile" id="UploadedFile" />
-				</div>
-				<span class="Error"></span>
-			</div> -->
-			<div class="form-group">
+<body class="registration-page">
+	<div layout:fragment="content">
+		<div class="container">
+			<div class="col-md-8">
+				<div class="form-area">
+					<form th:action="@{/save}" method="POST">
+						<br style="clear: both">
+						<h3 style="margin-bottom: 25px; text-align: center;">CREATION D'UN NOUVEAU COMPTE</h3>
+						<div class="form-group">
 
-				<label>Pseudo:</label> <input class="form-control" type="text"
-					name="pseudo" required placeholder="Entrez votre pseudo" th:value="${member.pseudo}"><span class="text-danger"
+							<label>Pseudo:</label> <input class="form-control" type="text"
+								name="pseudo" required placeholder="Entrez votre pseudo"
+								th:value="${member.pseudo}"><span class="text-danger"
 								th:errors="${member.pseudo}"></span>
-			</div>
-			<div class="form-group">
-				<label>Email:</label> <input class="form-control" type="email"
-					name="email" required placeholder="Entrez votre email" th:value="${member.email}"><span class="text-danger"
+						</div>
+						<div class="form-group">
+							<label>Email:</label> <input class="form-control" type="email"
+								name="email" required placeholder="Entrez votre email"
+								th:value="${member.email}"><span class="text-danger"
 								th:errors="${member.email}"></span>
-			</div>
-			<div class="form-group">
-				<label>Mot de passe:</label> <input class="form-control" type="password"
-					name="passWord" required placeholder="Entrez votre mot de passe" th:value="${member.passWord}"><span class="text-danger"
+						</div>
+						<div class="form-group">
+							<label>Mot de passe:</label> <input class="form-control"
+								type="password" name="passWord" required
+								placeholder="Entrez votre mot de passe"
+								th:value="${member.passWord}"><span class="text-danger"
 								th:errors="${member.passWord}"></span>
+						</div>
+
+						<button type="submit" id="submit" name="submit"
+							class="btn btn-primary pull-right">Enregistrer</button>
+					</form>
+				</div>
 			</div>
-			<div class="form-group">
-				<input class="btn btn-primary btn-block" type="submit"
-					value="Submit" />
-			</div>
-		</form>
+		</div>
 	</div>
 </body>
 </html>

@@ -3,146 +3,40 @@
 <head>
 <meta charset="utf-8" />
 <title>Se connecter</title>
-<link href="/css/stylepageconnexion.css" rel="stylesheet"></link>
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css"
-	rel="stylesheet" id="bootstrap-css"></link>
-<script
-	src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<link href="/css/style.css" rel="stylesheet">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
-<body>
-	<div class="sidenav"></div>
-	<div class="main">
-		<div class="container">
-			<div class="col-md-6 col-sm-12">
-				<div class="login-main-text">
-					<h2>Entrez dans le monde des amoureux de l'escalade !</h2>
-				</div>
-
-				<div class="row" style="margin-top: 20px">
-					<div
-						class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-						<form role="form" th:action="@{login2}" method="post">
-							<fieldset>
-								<h2>Merci de vous connecter</h2>
-								<hr class="colorgraph">
-								<div class="form-group">
-									<input type="text" name="pseudo" id="pseudo"
-										class="form-control input-lg" placeholder="Pseudo">
-								</div>
-								<div class="form-group">
-									<input type="password" name="Mot de passe" id="password"
-										class="form-control input-lg" placeholder="Mot de passe">
-								</div>
-								<span class="button-checkbox">
-									<button type="button" class="btn" data-color="info">Se
-										souvenir</button> <input type="checkbox" name="remember_me"
-									id="remember_me" checked="checked" class="hidden"> <a
-									href="" class="btn btn-link pull-right">Oubli du mot de
-										passe?</a>
-								</span>
-								<hr class="colorgraph">
-								<div class="row">
-									<div class="col-xs-6 col-sm-6 col-md-6">
-										<input type="submit" class="btn btn-lg btn-success btn-block"
-											value="Se connecter">
-									</div>
-									<div class="col-xs-6 col-sm-6 col-md-6">
-										<a th:href="@{/RegistrationForm}" class="btn btn-lg btn-primary btn-block">Créer
-											un compte</a>
-									</div>
-								</div>
-							</fieldset>
-						</form>
-					</div>
-				</div>
-				</div>
-			</div>
-		</div>
+<body> <section id="login-bg">
+    <div id="login-bg-top">
+        <div class="logo-circle"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                </div><!-- /.col-md-12 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </div>
+    
+    <div class="container">
+        <div class="col-md-12">
+        <h3>Veuillez-vous connecter !</h3>
+            <div class="bg-content">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Email" aria-describedby="basic-addon1">
+                </div>
+                
+                <div class="input-group" style="margin-top: 10px">
+                  <input type="text" class="form-control" placeholder="Mot de passe" aria-describedby="basic-addon1">
+                </div>
+                
+                <div class="input-group" style="margin-top: 50px;">
+                  <a href="#" class="btn btn-success btn-lg">SE CONNECTER</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-<!--
-			<div class="col-md-6">
-				<div class="panel panel-primary">
-					<div class="panel-heading">Authentification</div>
-					<div class="panel-body"></div>
-					<form th:action="@{login}" method="post">
-						<h1>
-							<i class="fa fa-lock" aria-hidden="true"></i>Connexion
-						</h1>
-						<br />
-						<br />
-						<div class="input-group">
-							<div class="input-group-prepend">
-								<span class="input-group-text"><i class="fas fa-user-tie"></i></span>
-							</div>
-							<input type="text" name="username" class="form-control"
-								placeholder="username" />
-						</div>
-						<br />
-
-						<div class="input-group">
-							<div class="input-group-prepend">
-								<span class="input-group-text"><i class="fa fa-key icon"></i></span>
-							</div>
-							<input type="password" name="password" class="form-control"
-								placeholder="password" />
-						</div>
-						<br />
-						<div class="checkbox">
-							<label><input type="checkbox" value="" />&nbsp;Se
-								souvenir</label>
-						</div>
-						<br />
-						<button type="submit" class="btn btn-success">Entrer</button>
-
-						<div class="footer">
-							<p>
-								Je n'ai pas de compte ! <a href="#">Creer son compte</a>
-							</p>
-							<p>
-								<a href="#">Oubli du mot de passe ?</a>
-							</p>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-
-
-
-
-
-
-<div class="main">
-	<div class="col-md-6 col-sm-12">
-		<div class="login-form">
-			<form>
-				<div class="form-group">
-					<label>User Name</label> <input type="text" class="form-control"
-						placeholder="User Name">
-				</div>
-				<div class="form-group">
-					<label>Password</label> <input type="password" class="form-control"
-						placeholder="Password">
-				</div>
-				<button type="submit" class="btn btn-black">Login</button>
-				<button type="submit" class="btn btn-secondary">Register</button>
-			</form>
-		</div>
-	</div>
-</div>
--->
-

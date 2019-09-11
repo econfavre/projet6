@@ -303,6 +303,87 @@ margin-top: 10px;
   margin-top: -5px;
 }
 
+/* PAGE SITEFORM.HTML */
+
+body.formsite-page { 
+  background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("/pictures/shutterstock_288699440-Large.jpg");
+   no-repeat center center fixed; 
+  -webkit-background-size: center;
+  -moz-background-size: center;
+  -o-background-size: center;
+  background-size: center;
+  margin: 0;
+  padding: 0;
+  background-color: #17a2b8;
+  height: 50vh;
+  font-size: 14px;
+}
+
+/* PAGE REGISTRATION.HTML */
+body.registration-page {
+	background: url("/pictures/655546-download-free-climb-wallpapers-1920x1080.jpg"); 
+	no-repeat center center fixed;
+	-webkit-background-size: center;
+	-moz-background-size: center;
+	-o-background-size: center;
+	background-size: center;
+	margin: 0;
+	padding: 0;
+	background-color: #17a2b8;
+	height: 100vh;
+	font-size: 14px;
+	color: #566787;
+	font-family: 'Roboto', sans-serif;
+}
+
+/* PAGE LOGIN.HTML */
+#login-bg {
+    min-height: 500px;
+    background-color: #f5f5f5;
+}
+
+#login-bg-top {
+    background-image: url('/pictures/Untitled.jpg');
+    background-size: center;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    height: 320px;
+    display: block;
+    text-align: center;
+}
+
+#login-bg-top h3 {
+    color: #101010;
+    text-align : center;
+}
+
+.logo-circle {
+    background-image: url('/pictures/climbing-sv.nedilja_497x355.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 125px;
+    width: 150px;
+    height: 170px;
+    margin-top: 50px;
+    display: inline-block;
+    border: 5px solid rgba(211,211,211,0.9);
+}
+
+.bg-content {
+    text-align: center;
+    padding-top: 50px;
+    padding-left: 110px;
+    padding-right: 110px;
+    margin-top: 40px;
+    margin-bottom: 90px;
+    background-color: #FFF;
+    min-height: 300px;
+}
+
+.input-group {
+    width: 100%;
+}
+
 
 
  

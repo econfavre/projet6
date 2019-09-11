@@ -41,7 +41,7 @@ public class MemberController {
 		return "403";
 	}
 
-	@GetMapping("/")
+	@GetMapping("/login")
 	public String login() {
 		return "login2";
 	}
