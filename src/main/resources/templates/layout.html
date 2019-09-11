@@ -2,13 +2,21 @@
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
-<meta charset="utf-8">
-<title>Page Layout</title>
-<link rel="stylesheet" href="../static/css/bootstrap.min.css"
-	th:href="@{/css/bootstrap.min.css}">
+    <meta charset="UTF-8">
+    <title>Responsive Menu</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+<link href="/css/style.css" rel="stylesheet">
 </head>
 <body>
-	<!-- Navigation -->
+       <header1>
+		<!-- Navigation -->
 		<nav class="navbar my-nav navbar-expand-md sticky-top">
 			<div class="container-fluid">
 				<a class="navbar-brand" href="#"></a>
@@ -18,38 +26,33 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbarResponsive">
 					<ul class="navbar nav ml-auto">
-						<li class="active"><a class="nav-link" href="#">Accueil</a></li>
-						<li class="nav-item"><a class="nav-link" th:href="@{/sites}">Sites</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">A
-								propos</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+						<li class="active"><a class="nav-link" th:href="@{/home}">ACCUEIL</a></li>
 
-						<li class="dropdown"><a href="#" id="drop1"
-							data-toggle="dropdown" class="dropdown-toggle" role="button">Mon
-								compte<b class="caret"></b>
-						</a>
-							<ul role="menu" class="dropdown-menu" aria-labelledby="drop1">
-								<li role="presentation"><a href="#" role="menuitem">Informations</a></li>
-								<li role="presentation"><a href="#" role="menuitem">Mes
-										topos</a></li>
-								<li role="presentation"><a href="#" role="menuitem">Mes
-										emprunts</a></li>
-								<li role="presentation"><a th:href="@{/} role="menuitem">Deconnexion</a></li>
-							</ul></li>
-
-
+						<li class="nav-item"><a class="nav-link" th:href="@{/sites}">SITES</a></li>
+						<li class="nav-item"><a class="nav-link" href="#">TOPOS</a></li>
+						<li class="nav-item"><a class="nav-link" href="#">RECHERCHE</a></li>
 					</ul>
+
+					<div class="dropdown">
+						<button class="btn btn-secondary dropdown-toggle" type="button"
+							id="dropdownMenuButton" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false">MON COMPTE</button>
+						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+							<a class="dropdown-item" href="#">Connexion</a> <a
+								class="dropdown-item" href="#">Créer un compte</a>
+						</div>
+					</div>
 				</div>
 			</div>
 		</nav>
-	
-<section layout:fragment="content1"></section>
+       
+   </header1>
+<section layout:fragment="content"></section>
 
-<footer>
+<footer class="navbar-fixed-bottom">
 <div>
+<p>Esca'pad 2019</p>
 </div>
-
-
 </footer>
 </body>
 </html>

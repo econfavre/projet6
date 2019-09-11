@@ -1,5 +1,5 @@
 body { 
-  background: url("/pictures/shutterstock_288699440-Large.jpg");
+  background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("/pictures/shutterstock_288699440-Large.jpg");
    no-repeat center center fixed; 
   -webkit-background-size: center;
   -moz-background-size: center;

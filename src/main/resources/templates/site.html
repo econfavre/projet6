@@ -1,109 +1,121 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="layout">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bootstrap Order Details Table with Search Filter</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="../css/style.css"
-	th:href="@{/css/style.css}" />
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+<title>Liste des sites</title>
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link href="/css/style.css" rel="stylesheet">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript">
-$(document).ready(function(){
-	$('[data-toggle="tooltip"]').tooltip();
-});
+	$(document).ready(function() {
+		$('[data-toggle="tooltip"]').tooltip();
+	});
 </script>
 </head>
-<body>
-    <div class="container">
-        <div class="table-wrapper">
-            <div class="table-title">
-                <div class="row">
-                    <div class="col-sm-4">
-						<h2>Details <b>Sites</b></h2>
-					</div>
-					<div class="col-sm-8">						
-						<a th:href="@{/sites}" class="btn btn-primary"><i class="material-icons">&#xE863;</i> <span>Rafraichir la liste</span></a>
-						<a th:href="@{/formSite}" class="btn btn-info"><span>Ajouter un nouveau site</span></a>
-					</div>
-                </div>
-            </div>
-			<div class="table-filter">
-				<div class="row">
-                    <div class="col-sm-12">
-						
-						<div class="filter-group">
-						<form th:action="@{sites}" method="get">
-							<label>Nom du site</label>
-							<input type="text" class="form-control" name="motCle"/>
-							<button class="btn btn-primary">Rechercher</button>
-							</form>
+<body class="site-page">
+	<div layout:fragment="content">
+		<div class="container">
+			<div class="table-wrapper">
+				<div class="table-title">
+					<div class="row">
+						<div class="col-sm-4">
+							<h2>
+								Liste des sites <b>Details</b>
+							</h2>
 						</div>
-						<div class="filter-group">
-							<label>Pays</label>
-							<select class="form-control">
-								<option>France</option>
-								<option>Allemagne</option>
-								<option>Italie</option>
-								<option>Autriche</option>
-								<option>Angleterre</option>
-								<option>Belgique</option>
-								<option>Autre</option>							
-							</select>
-						</div>
-						<div class="filter-group">
-							<label>Orientation</label>
-							<select class="form-control">
-								<option>Sud</option>
-								<option>Sud Est</option>
-								<option>Sud Ouest</option>
-								<option>Est</option>
-								<option>Ouest</option>
-								<option>Nord</option>
-								<option>Nord Est</option>
-								<option>Nord Ouest</option>
-							</select>
-						</div>
-						<div class="filter-group">
-							<label>Cotation</label>
-							<select class="form-control">
-								<option value="3a">3a</option>
-								<option value="3b">3b</option>
-								<option value="3c">3c</option>
-								<option value="4a">4a</option>
-								<option value="4b">4b</option>
-								<option value="4c">4c</option>
-								<option value="5a">5a</option>
-								<option value="5b">5b</option>
-								<option value="5c">5c</option>
-								<option value="6a">6a</option>
-								<option value="5b">6b</option>
-								<option value="5c">7c</option>
-							</select>
+						<div class="col-sm-8">
+							<a th:href="@{/sites}" class="btn btn-primary"><i
+								class="material-icons">&#xE863;</i> <span>Rafraichir la
+									liste</span></a> <a th:href="@{/formSite}" class="btn btn-info"><i
+								class="material-icons">&#xE24D;</i> <span>Ajouter un
+									nouveau site</span></a>
 						</div>
 					</div>
-                </div>
-			</div>
-            <table class="table table-striped table-hover">
-                <thead>
-                	<tr>
-                			<th>Id</th>
+				</div>
+				<div class="table-filter">
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="filter-group">
+								<form th:action="@{sites}" method="get">
+									<label>Nom du site</label> <input type="text"
+										class="form-control" name="motCle" />
+									<button class="btn btn-primary">Rechercher</button>
+								</form>
+							</div>
+							<button type="button" class="btn btn-primary">
+								<i class="fa fa-search"></i>
+							</button>
+							<div class="filter-group">
+								<label>Localisation </label> <select class="form-control">
+									<option>France</option>
+									<option>Allemagne</option>
+									<option>Italie</option>
+									<option>Autriche</option>
+									<option>Angleterre</option>
+									<option>Belgique</option>
+									<option>Autre</option>
+								</select>
+							</div>
+
+
+
+							<div class="filter-group">
+								<label>Orientation</label> <select class="form-control">
+									<option>Sud</option>
+									<option>Sud Est</option>
+									<option>Sud Ouest</option>
+									<option>Est</option>
+									<option>Ouest</option>
+									<option>Nord</option>
+									<option>Nord Est</option>
+									<option>Nord Ouest</option>
+								</select>
+							</div>
+							<div class="filter-group">
+								<label>Cotation</label> <select class="form-control">
+									<option value="3a">3a</option>
+									<option value="3b">3b</option>
+									<option value="3c">3c</option>
+									<option value="4a">4a</option>
+									<option value="4b">4b</option>
+									<option value="4c">4c</option>
+									<option value="5a">5a</option>
+									<option value="5b">5b</option>
+									<option value="5c">5c</option>
+									<option value="6a">6a</option>
+									<option value="5b">6b</option>
+									<option value="5c">7c</option>
+								</select>
+							</div>
+							<span class="filter-icon"><i class="fa fa-filter"></i></span>
+						</div>
+					</div>
+				</div>
+				<table class="table table-striped table-hover">
+					<thead>
+						<tr>
+							<th>Id</th>
 							<th>Nom</th>
 							<th>Type</th>
 							<th>Orientation</th>
 							<th>Pays</th>
-							<th>Nombre de secteurs</th>
-							<th>Nombre de voies</th>
+							<th>Secteurs</th>
+							<th>Voies</th>
 							<th>Cotation</th>
+							<th>Action</th>
 						</tr>
-                    <tr th:each="s:${listSites}">
-                    		<td th:text="${s.siteId}"></td>
+					</thead>
+					<tbody>
+						<tr th:each="s:${listSites}">
+							<td th:text="${s.siteId}"></td>
 							<td th:text="${s.nameSite}"></td>
 							<td th:text="${s.type}"></td>
 							<td th:text="${s.orientation}"></td>
@@ -111,33 +123,41 @@ $(document).ready(function(){
 							<td th:text="${s.sectorsNumber}"></td>
 							<td th:text="${s.waysNumber}"></td>
 							<td th:text="${s.cotation}"></td>
-							<td><a class="btn btn-danger"
+							<!--<td><a class="btn btn-danger"
 								onclick="return confirm('Etes-vous sur de vouloir supprimer ?')"
 								th:href="@{delete(siteId=${s.siteId}, page=${currentPage}, motCle=${motCle})}">Effacer</a>
 							</td>
-							<td><a th:href="@{edit(siteId=${s.siteId})}">Modifier le site</a>
-							</td>
-							<td><a href="/pictures/beginners-guide-rock-climbing_WATCH.jpg"
-								download class="view" title="Telecharger le topo" data-toggle="tooltip"><i class="material-icons">&#xE5C8;</i></a></td>
-							</tr>
-                </thead>
-            </table>
-			<div class="clearfix">
-                <ul class="pagination">
-                    <li class="page-item disabled"><a href="#">Previous</a></li>
-                    <li th:class="${currentPage==status.index}?'active':''"
+							<td><a th:href="@{edit(siteId=${s.siteId})}">Modifier le
+									site</a></td> -->
+							<td><a href="#" download class="view"
+								title="Telecharger le topo]" data-toggle="tooltip"><i
+									class="material-icons">&#xE417;</i></a> <a
+								th:href="@{edit(siteId=${s.siteId})}" class="edit" title="Edit"
+								data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+								<a onclick="return confirm('Etes-vous sur de vouloir supprimer ?')"
+								th:href="@{delete(siteId=${s.siteId}, page=${currentPage}, motCle=${motCle})}"
+								class="delete" title="Delete" data-toggle="tooltip"><i
+									class="material-icons">&#xE872;</i></a></td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="clearfix">
+					<ul class="pagination">
+						<li class="page-item disabled"><a href="#">Previous</a></li>
+						<li th:class="${currentPage==status.index}?'active':''"
 							th:each="page, status:${pages}"><a
 							th:href="@{/sites(page=${status.index}, motCle=${motCle})}"
 							th:text="${status.index}"></a></li>
-                    <li class="page-item"><a href="#" class="page-link">Next</a></li>
-                </ul>
-                <div class="clearfix">
-					<ul class="nav nav-pills">
-						
+						<li class="page-item"><a href="#" class="page-link">Next</a></li>
 					</ul>
+					<div class="clearfix">
+						<ul class="nav nav-pills">
+
+						</ul>
+					</div>
 				</div>
-            </div>
-        </div>
-    </div>     
+			</div>
+		</div>
+	</div>
 </body>
-</html>                                		                            
+</html>

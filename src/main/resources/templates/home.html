@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
->
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -30,28 +29,25 @@
 				<div class="collapse navbar-collapse" id="navbarResponsive">
 					<ul class="navbar nav ml-auto">
 						<li class="active"><a class="nav-link" href="#">ACCUEIL</a></li>
-						
+
 						<li class="nav-item"><a class="nav-link" th:href="@{/sites}">SITES</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">A
-								PROPOS</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">CONTACT</a></li>
-
-						<li class="dropdown"><a href="#" id="drop1"
-							data-toggle="dropdown" class="dropdown-toggle" role="button">MON COMPTE<b class="caret"></b>
-						</a>
-							<ul role="menu" class="dropdown-menu" aria-labelledby="drop1">
-								<li role="presentation"><a href="#" role="menuitem">Informations</a></li>
-								<li role="presentation"><a href="#" role="menuitem">Mes
-										topos</a></li>
-								<li role="presentation"><a href="#" role="menuitem">Emprunts</a></li>
-								<li role="presentation"><a th:href="@{/Login?Logout}" role="menuitem">Déconnexion</a></li>
-							</ul></li>
-
-
+						<li class="nav-item"><a class="nav-link" href="#">TOPOS</a></li>
+						<li class="nav-item"><a class="nav-link" href="#">RECHERCHE</a></li>
 					</ul>
+
+					<div class="dropdown">
+						<button class="btn btn-secondary dropdown-toggle" type="button"
+							id="dropdownMenuButton" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false">MON COMPTE</button>
+						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+							<a class="dropdown-item" href="#">Connexion</a> <a
+								class="dropdown-item" href="#">Créer un compte</a>
+						</div>
+					</div>
 				</div>
 			</div>
 		</nav>
+
 
 		<div class="wrapper">
 			<div class="inner">
@@ -63,28 +59,30 @@
 				</div>
 			</div>
 		</div>
-		  
+
 		<div class="container-fluid padding">
 			<div class="row padding">
 				<div class="col-md-4">
 					<div class="card">
-						<img class="card-imd-top" src="/pictures/beginners-guide-rock-climbing_WATCH.jpg">
+						<img class="card-imd-top"
+							src="/pictures/beginners-guide-rock-climbing_WATCH.jpg">
 						<div class="card-body">
 							<h4>La grande Rocheuse</h4>
-							<a href="#" class="btn btn-outline-secondary" >Decouvrir</a>
+							<a href="#" class="btn btn-outline-secondary">Decouvrir</a>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="card">
-						<img class="card-imd-top" src="/pictures/f2-02-belvedere-climbing-arco-360gardalife.jpg">
+						<img class="card-imd-top"
+							src="/pictures/f2-02-belvedere-climbing-arco-360gardalife.jpg">
 						<div class="card-body">
 							<h4>Canyon Bay</h4>
 							<a href="#" class="btn btn-outline-secondary">Decouvrir</a>
 						</div>
 					</div>
 				</div>
-				
+
 				<div class="col-md-4">
 					<div class="card">
 						<img class="card-imd-top" src="/pictures/falaises-d-etretat.jpg">
@@ -94,47 +92,9 @@
 						</div>
 					</div>
 				</div>
-			
+
 			</div>
 		</div>
-		
-		
-		
-
-		<!--- Jumbotron -->
-
-
-		<!--- Welcome Section -->
-
-
-		<!--- Three Column Section -->
-
-
-		<!--- Two Column Section -->
-
-
-		<!--- Fixed background -->
-
-
-		<!--- Emoji Section -->
-
-
-		<!--- Meet the team -->
-
-
-		<!--- Cards -->
-
-
-		<!--- Two Column Section -->
-
-
-		<!--- Connect -->
-
-
-		<!--- Footer -->
-
-
-
 	</header>
 </body>
 </html>
