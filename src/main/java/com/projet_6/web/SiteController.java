@@ -66,4 +66,13 @@ public class SiteController {
 		return "EditSite"; // on redirige vers une nouvelle page de confirmation que l'on doit creee dan
 	}
 
+	@GetMapping("/searchForm")
+	public String search(Model model, @Valid Site site, BindingResult bindingResult) {
+		return "SearchForm";
+	}
+
+	@GetMapping("/sitecreation")
+	public String siteCreation(Model model, @Valid Site site, BindingResult bindingResult) {
+		return "SiteCreation";
+	}
 }

@@ -22,33 +22,22 @@ public class Site implements Serializable {
 	@NotNull
 	private String nameSite;
 	@NotNull
-	private String type;
-	@NotNull
 	private String orientation;
 	@NotNull
 	private String country;
 	@NotNull
-	private int sectorsNumber;
-	@NotNull
-	private int waysNumber;
-	@NotNull
-	private String cotation;
+	private String descriptionSite;
 
 	public Site() {
 		super();
 	}
 
-	public Site(Long siteId, String nameSite, String type, String orientation, String country, int sectorsNumber,
-			int waysNumber, String cotation) {
+	public Site(Long siteId, String nameSite, String orientation, String country, String descriptionSite) {
 		super();
 		this.siteId = siteId;
 		this.nameSite = nameSite;
-		this.type = type;
 		this.orientation = orientation;
 		this.country = country;
-		this.sectorsNumber = sectorsNumber;
-		this.waysNumber = waysNumber;
-		this.cotation = cotation;
 	}
 
 	public Long getSiteId() {
@@ -67,14 +56,6 @@ public class Site implements Serializable {
 		this.nameSite = nameSite;
 	}
 
-	public String getType() {
-		return type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-	}
-
 	public String getOrientation() {
 		return orientation;
 	}
@@ -91,28 +72,12 @@ public class Site implements Serializable {
 		this.country = country;
 	}
 
-	public int getWaysNumber() {
-		return waysNumber;
+	public String getDescriptionSite() {
+		return descriptionSite;
 	}
 
-	public void setWaysNumber(int waysNumber) {
-		this.waysNumber = waysNumber;
-	}
-
-	public String getCotation() {
-		return cotation;
-	}
-
-	public void setCotation(String cotation) {
-		this.cotation = cotation;
-	}
-
-	public int getSectorsNumber() {
-		return sectorsNumber;
-	}
-
-	public void setSectorsnumber(int sectorsNumber) {
-		this.sectorsNumber = sectorsNumber;
+	public void setDescriptionSector(String descriptionSite) {
+		this.descriptionSite = descriptionSite;
 	}
 
 }

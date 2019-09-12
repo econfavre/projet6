@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Esca'pad Site communautaire Escalade Outdoor</title>
+<meta charset="utf-8" />
+<title>Se connecter</title>
+<link href="/css/style.css" rel="stylesheet">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 <script
@@ -14,10 +17,9 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 <link href="/css/style.css" rel="stylesheet">
-
 </head>
-<body>
-	<header>
+<body> 
+
 		<!-- Navigation -->
 		<nav class="navbar my-nav navbar-expand-md sticky-top">
 			<div class="container-fluid">
@@ -49,54 +51,35 @@
 		</nav>
 
 
-		<div class="wrapper">
-			<div class="inner">
-				<div class="content">
-					<h2>NEW</h2>
-					<p>Vous trouverez les tous derniers topos ajoutes ! Venez le
-						decouvrir</p>
-					<button class="btn btn-danger btn-lg">Cliquez ici</button>
-				</div>
-			</div>
-		</div>
-
-		<div class="container-fluid padding">
-			<div class="row padding">
-				<div class="col-md-4">
-					<div class="card">
-						<img class="card-imd-top"
-							src="/pictures/beginners-guide-rock-climbing_WATCH.jpg">
-						<div class="card-body">
-							<h4>La grande Rocheuse</h4>
-							<a href="#" class="btn btn-outline-secondary">Decouvrir</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="card">
-						<img class="card-imd-top"
-							src="/pictures/f2-02-belvedere-climbing-arco-360gardalife.jpg">
-						<div class="card-body">
-							<h4>Canyon Bay</h4>
-							<a href="#" class="btn btn-outline-secondary">Decouvrir</a>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-md-4">
-					<div class="card">
-						<img class="card-imd-top" src="/pictures/falaises-d-etretat.jpg">
-						<div class="card-body">
-							<h4>Etretat</h4>
-							<a href="#" class="btn btn-outline-secondary">Decouvrir</a>
-						</div>
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</header>
+<section id="login-bg">
+    <div id="login-bg-top">
+        <div class="logo-circle"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                </div><!-- /.col-md-12 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </div>
+    
+    <div class="container">
+        <div class="col-md-12">
+        <h3>Veuillez-vous connecter !</h3>
+            <div class="bg-content">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Email" aria-describedby="basic-addon1">
+                </div>
+                
+                <div class="input-group" style="margin-top: 10px">
+                  <input type="text" class="form-control" placeholder="Mot de passe" aria-describedby="basic-addon1">
+                </div>
+                
+                <div class="input-group" style="margin-top: 50px;">
+                  <a href="#" class="btn btn-success btn-lg">SE CONNECTER</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 </body>
 </html>
-
-

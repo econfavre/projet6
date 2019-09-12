@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="layout">
+<head>
+<meta charset="utf-8" />
+<title>Création d'une voie</title>
+<link rel="stylesheet" type="text/css" href="../css/style.css"
+	th:href="@{/css/style.css}" />
+<script
+	src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body class="formsite-page">
+	<div layout:fragment="content">
+		<div class="container">
+			<div class="col-md-8">
+				<div class="form-area">
+					<!--  <form th:action="@{/save}" method="POST">-->
+						<br style="clear: both">
+						<h3 style="margin-bottom: 25px; text-align: center;">CREATION
+							D'UNE NOUVELLE VOIE</h3>
+						<div class="form-group">
+							<label for="nameWay">Nom de la voie:</label><br> <input
+								type="text" name="nameWay" th:value="${way.nameWay}"
+								id="nameWay" class="form-control"> <span class="red"
+								th:errors="${way.nameWay}"></span>
+						</div>
+						<div class="form-group">
+							<label for="typeWay">Type de la voie:</label><br> <select
+								 class="form-control" id="typeWay" name="typeWay"
+								 th:value="${way.typeWay}" required>
+								 <option>Equipée</option>
+								 <option>Non équipée</option>
+							</select><span class="red" th:errors="${way.typeWay}"></span>
+						</div>
+					
+						<div class="form-group">
+							<label for="cotation">Difficulté de la voie:</label><br> <select
+								class="form-control" id="cotation" name="cotation"
+								th:value="${way.cotation}" required>
+								<option>3a</option>
+								<option>3b</option>
+								<option>3c</option>
+								<option>4a</option>
+								<option>4b</option>
+								<option>4c</option>
+								<option>5a</option>
+								<option>5b</option>
+								<option>5c</option>
+								<option>6a</option>
+								<option>6b</option>
+								<option>6c</option>
+								<option>7a</option>
+								<option>7b</option>
+								<option>7c</option>
+							</select> <span class="text-danger" th:errors="${way.cotation}"></span>
+						</div>
+						<div class="form-group">
+							<label for="height">Hauteur de la voie:</label><br> <input
+								type="text" name="height" th:value="${way.height}"
+								id="height" class="form-control"> <span class="red"
+								th:errors="${way.height}"></span>
+						</div>
+						<div class="form-group">
+							<label for="descriptionWay">Description de la voie </label>
+							<textarea name="site.descriptionWay"
+								id="descriptionWay" rows="5" class="form-control"
+								style="width: 100%"></textarea>
+						</div>
+						<button type="submit" id="submit" name="submit"
+							class="btn btn-primary pull-right">Enregistrer</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

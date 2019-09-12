@@ -43,7 +43,7 @@ public class MemberController {
 
 	@GetMapping("/login")
 	public String login() {
-		return "login2";
+		return "login";
 	}
 
 	@GetMapping("/newAccount")

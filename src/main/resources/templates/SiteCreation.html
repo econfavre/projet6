@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="layout">
+<head>
+<meta charset="utf-8" />
+<title>Création d'un site</title>
+<link rel="stylesheet" type="text/css" href="../css/style.css"
+	th:href="@{/css/style.css}" />
+<script
+	src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body class="formsite-page">
+	<div layout:fragment="content">
+		<div class="container">
+			<div class="col-md-8">
+				<div class="form-area">
+					<form th:action="@{/save}" method="POST">
+						<br style="clear: both">
+						<h3 style="margin-bottom: 25px; text-align: center;">CREATION
+							D'UN NOUVEAU SITE</h3>
+						<div class="form-group">
+							<label for="nameSite">Nom du site:</label><br> <input
+								type="text" name="nameSite" th:value="${site.nameSite}"
+								id="nameSite" class="form-control"> <span class="red"
+								th:errors="${site.nameSite}"></span>
+						</div>
+						<div class="form-group">
+							<label for="type">Type du site:</label><br> <input
+								type="text" class="form-control" id="type" name="type"
+								 th:value="${site.type}" required>
+							<span class="red" th:errors="${site.type}"></span>
+						</div>
+						<div class="form-group">
+							<label for="country">Orientation du site:</label><br> <select
+								class="form-control" id="orientation" name="orientation"
+								th:value="${site.orientation}" required>
+								<option>Sud</option>
+								<option>Sud Est</option>
+								<option>Sud Ouest</option>
+								<option>Est</option>
+								<option>Ouest</option>
+								<option>Nord</option>
+								<option>Nord Est</option>
+								<option>Nord Ouest</option>
+							</select> <span class="text-danger" th:errors="${site.orientation}"></span>
+						</div>
+						<div class="form-group">
+							<label for="country">Localisation du site:</label><br> <select
+								class="form-control" id="country" name="country"
+								th:value="${site.orientation}" required>
+								<option>France</option>
+								<option>Allemagne</option>
+								<option>Italie</option>
+								<option>Autriche</option>
+								<option>Angleterre</option>
+								<option>Belgique</option>
+								<option>Autre</option>
+							</select> <span class="text-danger" th:errors="${site.country}"></span>
+						</div>
+						<div class="form-group">
+							<label for="descriptionSite">Description du
+								secteur</label>
+							<textarea name="site.descriptionSite"
+								id="descriptionSite" rows="5" class="form-control"
+								style="width: 100%"></textarea>
+						</div>
+						<button type="submit" id="submit" name="submit"
+							class="btn btn-primary pull-right">Enregistrer</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
