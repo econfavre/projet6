@@ -4,7 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Responsive Menu</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/bootstap.min.css" th:href="@{css/bootstrap.min.css}">
+<link href="/css/style.css" rel="stylesheet">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script
@@ -12,10 +15,9 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-<link href="/css/style.css" rel="stylesheet">
 </head>
 <body>
-       <header1>
+       <header>
 		<!-- Navigation -->
 		<nav class="navbar my-nav navbar-expand-md sticky-top">
 			<div class="container-fluid">
@@ -29,30 +31,24 @@
 						<li class="active"><a class="nav-link" th:href="@{/home}">ACCUEIL</a></li>
 
 						<li class="nav-item"><a class="nav-link" th:href="@{/sites}">SITES</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">TOPOS</a></li>
+						<li class="nav-item"><a class="nav-link" href="@{/newtopo}">TOPOS</a></li>
 						<li class="nav-item"><a class="nav-link" th:href="@{/searchForm}">RECHERCHE</a></li>
 					</ul>
 
 					<div class="dropdown">
 						<button class="btn btn-secondary dropdown-toggle" type="button"
 							id="dropdownMenuButton" data-toggle="dropdown"
-							aria-haspopup="true" aria-expanded="false">MON COMPTE</button>
+							aria-haspopup="true" style="font-size:18px" aria-expanded="false">MON COMPTE</button>
 						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-							<a class="dropdown-item" th:href="@{/login}">Connexion</a> <a
-								class="dropdown-item" th:href="@{/RegistrationForm}">Créer un compte</a>
+							<a class="dropdown-item" style="font-size:12px" th:href="@{/login}">Connexion</a> <a
+								class="dropdown-item" style="font-size:12px" th:href="@{/RegistrationForm}">Créer un compte</a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</nav>
        
-   </header1>
+   </header>
 <section layout:fragment="content"></section>
-
-<footer class="navbar-fixed-bottom">
-<div>
-<p>Esca'pad 2019</p>
-</div>
-</footer>
 </body>
 </html>

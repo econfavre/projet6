@@ -16,7 +16,6 @@
 		<div class="container">
 			<div class="col-md-8">
 				<div class="form-area">
-					<!--  <form th:action="@{/save}" method="POST">-->
 						<br style="clear: both">
 						<h3 style="margin-bottom: 25px; text-align: center;">RECHERCHE</h3>
 						<div class="form-group">
@@ -47,9 +46,9 @@
 							</select> <span class="text-danger" th:errors="${site.country}"></span>
 						</div>
 						<div class="form-group">
-							<label for="cotation">Cotation du site :</label><br> <select
+							<label for="cotation">Cotation de la voie :</label><br> <select
 								class="form-control" id="cotation" name="cotation"
-								th:value="${site.cotation}" required>
+								th:value="${way.cotation}" required>
 								<option value="3a">3a</option>
 								<option value="3b">3b</option>
 								<option value="3c">3c</option>
@@ -62,14 +61,168 @@
 								<option value="6a">6a</option>
 								<option value="6b">6b</option>
 								<option value="6c">6c</option>
-							</select> <span class="text-danger" th:errors="${site.cotation}"></span>
+							</select> <span class="text-danger" th:errors="${way.cotation}"></span>
 						</div>
 						<button type="submit" id="submit" name="submit"
 							class="btn btn-primary pull-right">Chercher</button>
-					</form>
 				</div>
 			</div>
 		</div>
 	</div>
 	</body>
 </html>
+
+
+<div class="container" style="border-style: solid; border-color: #DCDCDC; border-width: 2px; border-radius: 10px;
+        margin-top: 1%; box-shadow: 6px 6px 14px #DCDCDC">
+
+        <div class="col-md-12" style="text-align: center; margin-top: 2%">
+            <h1>Formulaire de recherche !</h1>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12" style="margin-top: 1%">
+
+                <form id="advanced_research" name="advanced_research" action="/escalade-webapp/advanced_research.action" method="post">
+<table class="wwFormTable">
+
+                    <div class="form-group">
+                        <label for="selectRegionResearch">Région</label>
+                        <select name="regionSelect" id="selectRegionResearch" required="true" class="form-control" style="width: 100%">
+                            
+                                <option>Ile-de-France</option>
+                            
+                                <option>Champagne-Ardenne</option>
+                            
+                                <option>Picardie</option>
+                            
+                                <option>Haute-Normandie</option>
+                            
+                                <option>Centre</option>
+                            
+                                <option>Basse-Normandie</option>
+                            
+                                <option>Bourgogne</option>
+                            
+                                <option>Nord-Pas-de-Calais</option>
+                            
+                                <option>Lorraine</option>
+                            
+                                <option>Alsace</option>
+                            
+                                <option>Franche-Comté</option>
+                            
+                                <option>Pays de la Loire</option>
+                            
+                                <option>Bretagne</option>
+                            
+                                <option>Poitou-Charentes</option>
+                            
+                                <option>Aquitaine</option>
+                            
+                                <option>Midi-Pyrénées</option>
+                            
+                                <option>Limousin</option>
+                            
+                                <option>Rhône-Alpes</option>
+                            
+                                <option>Auvergne</option>
+                            
+                                <option>Languedoc-Roussillon</option>
+                            
+                                <option>Provence-Alpes-Côte d&#039;Azur</option>
+                            
+                                <option>Corse</option>
+                            
+                                <option>Guadeloupe</option>
+                            
+                                <option>Martinique</option>
+                            
+                                <option>Guyane</option>
+                            
+                                <option>La Réunion</option>
+                            
+                                <option>Mayotte</option>
+                            
+                        </select>
+
+                        <label for="selectTypeVoieResearch">Type de la voie</label>
+                        <select name="typeVoieSelect" id="selectTypeVoieResearch" required="true" class="form-control">
+                            
+                                <option>Non équipée</option>
+                            
+                                <option>Equipée</option>
+                            
+                        </select>
+
+                        <label for="selectCotationVoieResearch">Cotation de la voie</label>
+                        <select name="cotationVoieSelect" id="selectCotationVoieResearch" required="true" class="form-control">
+                            
+                                <option>1</option>
+                            
+                                <option>2</option>
+                            
+                                <option>3</option>
+                            
+                                <option>4</option>
+                            
+                                <option>5a</option>
+                            
+                                <option>5b</option>
+                            
+                                <option>5c</option>
+                            
+                                <option>6a</option>
+                            
+                                <option>6a+</option>
+                            
+                                <option>6b</option>
+                            
+                                <option>6b+</option>
+                            
+                                <option>6c</option>
+                            
+                                <option>6c+</option>
+                            
+                                <option>7a</option>
+                            
+                                <option>7a+</option>
+                            
+                                <option>7b</option>
+                            
+                                <option>7b+</option>
+                            
+                                <option>7c</option>
+                            
+                                <option>7c+</option>
+                            
+                                <option>8a</option>
+                            
+                                <option>8a+</option>
+                            
+                                <option>8b</option>
+                            
+                                <option>8b+</option>
+                            
+                                <option>8c</option>
+                            
+                                <option>8c+</option>
+                            
+                                <option>9a</option>
+                            
+                                <option>9a+</option>
+                            
+                                <option>9b</option>
+                            
+                                <option>9b+</option>
+                            
+                                <option>9c</option>
+                            
+                        </select>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-md-5">
+                            <button id="validateFormResearch" class="btn btn-success" type="submit" style="width: 100%">Validez</button>
+                        </div>
+                    </div>
+                </table></form>

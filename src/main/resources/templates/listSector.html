@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="layout">
+<head>
+<meta charset="utf-8" />
+<title>Modification d'un site</title>
+<link rel="stylesheet" type="text/css" href="../css/style.css"
+	th:href="@{/css/style.css}" />
+<script
+	src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+	<div layout:fragment="content">
+		<div class="container"
+			style="margin-top: 1%; border-style: solid; border-color: #DCDCDC; border-width: 2px; border-radius: 10px; box-shadow: 6px 6px 14px #DCDCDC">
+
+			<div class="row">
+				<div class="col-md-12"
+					style="margin-top: 10px; margin-bottom: 10px; text-align: center">
+					<h2>Topos d'éscalades !</h2>
+					<hr width="100%" color="#DCDCDC">
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<img src="imgs/photo_escalade_4.jpg"
+					style="width: 200px; height: 200px" alt="Edemere"
+					class="rounded float-left">
+				<div class="col-md-9" style="margin-top: 5px">
+					<ul>
+						<div class="well well-md">
+							<h4>Nom du topo : Edemere</h4>
+							<p>Description : Sollicitudin elit molestie venenatis
+								venenatis conubia netus phasellus. pellentesque dolor
+								suspendisse pellentesque. vulputate amet malesuada lacus platea
+								curae. ultricies suscipit mattis venenatis. semper ullamcorper
+								sollicitudin aptent praesent. elementum curabitur lectus vivamus
+								felis senectus volutpat. nam dolor</p>
+						</div>
+					</ul>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-10"></div>
+				<div class="col-md-2">
+					<a href="/escalade-webapp/topo_detail.action?topo_id=1"
+						class="btn btn-outline-info" role="button">Voir détail</a>
+				</div>
+			</div>
+			<hr width="100%" color="#DCDCDC">
+			<div class="row justify-content-center">
+				<img src="imgs/photo_escalade_7.jpg"
+					style="width: 200px; height: 200px" alt="Origine"
+					class="rounded float-left">
+				<div class="col-md-9" style="margin-top: 5px">
+					<ul>
+						<div class="well well-md">
+							<h4>Nom du topo : Origine</h4>
+							<p>Description : Laoreet dictumst vel integer accumsan platea
+								nisi vulputate. non aliquet dapibus ullamcorper placerat fusce
+								aenean. massa ante viverra quam sem morbi semper. ut eros eu
+								primis nisi diam ad. purus faucibus magna duis molestie fusce et
+								donec. aptent sodales morbi iaculis morbi nam mauris. commodo
+								quis donec eget magna.</p>
+						</div>
+					</ul>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-10"></div>
+				<div class="col-md-2">
+					<a href="/escalade-webapp/topo_detail.action?topo_id=3"
+						class="btn btn-outline-info" role="button">Voir détail</a>
+				</div>
+			</div>
+			<hr width="100%" color="#DCDCDC">
+			<div class="row justify-content-center">
+				<img src="imgs/photo_escalade_9.jpg"
+					style="width: 200px; height: 200px" alt="Land"
+					class="rounded float-left">
+				<div class="col-md-9" style="margin-top: 5px">
+					<ul>
+						<div class="well well-md">
+							<h4>Nom du topo : Land</h4>
+							<p>Description : Ornare fringilla non varius non netus.
+								consequat libero nec sem sapien vehicula lectus nam. duis
+								aliquet nec nullam ut risus porta. leo mattis blandit aenean
+								blandit. nibh ultrices fusce hendrerit sed varius varius.
+								elementum nec non</p>
+						</div>
+					</ul>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-10"></div>
+				<div class="col-md-2">
+					<a href="/escalade-webapp/topo_detail.action?topo_id=4"
+						class="btn btn-outline-info" role="button">Voir détail</a>
+				</div>
+			</div>
+			<hr width="100%" color="#DCDCDC">
+			<div class="row justify-content-center">
+				<img src="imgs/photo_escalade_8.jpg"
+					style="width: 200px; height: 200px" alt="Montagne rouge"
+					class="rounded float-left">
+				<div class="col-md-9" style="margin-top: 5px">
+					<ul>
+						<div class="well well-md">
+							<h4>Nom du topo : Montagne rouge</h4>
+							<p>Description : Donec urna ad et dictum aenean eget vel. dui
+								habitant gravida hendrerit felis vehicula elit accumsan. lorem
+								justo etiam interdum feugiat leo dui ac. aliquet risus quam
+								tristique aenean maecenas risus. pretium feugiat sagittis sed
+								varius libero ultrices netus.</p>
+						</div>
+					</ul>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-10"></div>
+				<div class="col-md-2">
+					<a href="/escalade-webapp/topo_detail.action?topo_id=5"
+						class="btn btn-outline-info" role="button">Voir détail</a>
+				</div>
+			</div>
+			<hr width="100%" color="#DCDCDC">
+			<div class="row justify-content-center">
+				<img src="pictures/22_climbing.jpg"
+					style="width: 200px; height: 200px" alt="Adiatisa"
+					class="rounded float-left">
+				<div class="col-md-9" style="margin-top: 5px">
+					<ul>
+						<div class="well well-md">
+							<h4>Nom du topo : Adiatisa</h4>
+							<p>Description : Primis per nec sollicitudin luctus ornare
+								luctus. tristique amet platea vestibulum curabitur praesent.
+								feugiat fusce lectus posuere vehicula tellus nec per. imperdiet
+								morbi scelerisque posuere congue. ultrices facilisis amet velit
+								maecenas. aenean vitae dolor odio. metus volutpat felis dui
+								lectus condimentum cubilia curabitur. eu ac hac vitae nisi urna</p>
+						</div>
+					</ul>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-10"></div>
+				<div class="col-md-2">
+					<a href="/escalade-webapp/topo_detail.action?topo_id=2"
+						class="btn btn-outline-info" role="button">Voir détail</a>
+				</div>
+			</div>
+			<hr width="100%" color="#DCDCDC">
+			<div class="row justify-content-center">
+				<img src="imgs/22_climbing.jpg" style="width: 200px; height: 200px"
+					alt="ju" class="rounded float-left">
+				<div class="col-md-9" style="margin-top: 5px">
+					<ul>
+						<div class="well">
+							<h4>Nom du topo : ju</h4>
+							<p>Description :</p>
+						</div>
+					</ul>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-10"></div>
+				<div class="col-md-2">
+					<a href="/escalade-webapp/topo_detail.action?topo_id=6"
+						class="btn btn-outline-info" role="button">Voir détail</a>
+				</div>
+			</div>
+			<hr width="100%" color="#DCDCDC">
+		</div>
+	</div>
+</body>
+</html>

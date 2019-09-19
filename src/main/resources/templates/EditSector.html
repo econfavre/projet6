@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="layout">
+<head>
+<meta charset="utf-8" />
+<title>Modification d'un secteur</title>
+<link rel="stylesheet" type="text/css" href="../css/style.css"
+	th:href="@{/css/style.css}" />
+<script
+	src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+	<div th:replace="fragments/header :: header"></div>
+	<div layout:fragment="content">
+		<div class="body-editForm">
+			<div class="container-fluid">
+				<div class="row jumbotron">
+					<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div id="login-wraper">
+					<form th:action="@{/saveEditSectorForm}"
+						method="post">
+						<legend>
+							MODIFICATION <span class="blue">DU SECTEUR</span>
+						</legend>
+						<div class="form-group">
+							<label for="siteId">Id du secteur:</label><br>
+							<label th:text="${sector.sectorId}"></label> <input type="hidden"
+								name="sectorId" th:value="${sector.sectorId}" id="sectorId"
+								class="form-control"> <span class="red"
+								th:errors="${sector.sectorId}"></span>
+						</div>
+
+						<div class="form-group">
+							<label for="nameSector">Nom du secteur:</label><br> <input
+								type="text" name="nameSector" th:value="${sector.nameSector}"
+								id="nameSector" class="form-control"> <span class="red"
+								th:errors="${sector.nameSector}"></span>
+						</div>
+						<div class="form-group">
+							<label for="descriptionSector">Description du secteur :</label><br>
+							<input type="text" name="descriptionSector" th:value="${sector.descriptionSector}" id="descriptionSector"
+								 class="form-control">
+								<span class="text-danger" th:errors="${sector.descriptionSector}"></span>
+						</div>
+						<button type="submit" class="btn btn-primary pull-right">Enregistrer</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>

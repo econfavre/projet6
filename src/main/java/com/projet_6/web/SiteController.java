@@ -9,11 +9,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.projet_6.dao.SiteRepository;
 import com.projet_6.entity.Site;
+import com.projet_6.entity.Way;
 
 @Controller
 public class SiteController {
@@ -39,16 +41,26 @@ public class SiteController {
 		return "redirect:/sites?page=" + page + "&motCle=" + motCle;
 	}
 
-	@GetMapping("/formSite")
-	public String formSite(Model model) {
+	@GetMapping("/CreationSite")
+	public String siteCreation(Model model) {
 		model.addAttribute("site", new Site());
-		return "FormSite";
+		return "CreationSite";
 	}
 
-	@PostMapping("/save")
-	public String save(Model model, @Valid Site site, BindingResult bindingResult) {
+	@RequestMapping(value = "/saveNewSite", method = RequestMethod.POST)
+	public String save(@Valid Site site, BindingResult bindingResult, Model model) {
+		System.out.println(bindingResult);
 		if (bindingResult.hasErrors())
-			return "FormSite";
+			return "CreationSite";
+		siteRepository.save(site);
+		return "redirect:/sites"; // on redirige vers une nouvelle page de confirmation que l'on doit creee dan
+	}
+
+	@RequestMapping(value = "/saveEditSiteForm", method = RequestMethod.POST)
+	public String saveEditForm(@Valid Site site, BindingResult bindingResult, Model model) {
+		System.out.println(bindingResult);
+		if (bindingResult.hasErrors())
+			return "EditSite";
 		siteRepository.save(site);
 		return "redirect:/sites"; // on redirige vers une nouvelle page de confirmation que l'on doit creee dan
 	}
@@ -67,12 +79,24 @@ public class SiteController {
 	}
 
 	@GetMapping("/searchForm")
-	public String search(Model model, @Valid Site site, BindingResult bindingResult) {
+	public String search(Model model, @Valid Site site, @Valid Way way, BindingResult bindingResult) {
 		return "SearchForm";
 	}
 
-	@GetMapping("/sitecreation")
-	public String siteCreation(Model model, @Valid Site site, BindingResult bindingResult) {
-		return "SiteCreation";
+	@GetMapping("/sitesconnecte")
+	public String index2(Model model, @RequestParam(name = "page", defaultValue = "0") int page,
+			@RequestParam(name = "motCle", defaultValue = "") String mc) {
+		Page<Site> pageSite = siteRepository.findByNameSiteContains(mc, PageRequest.of(page, 5));
+		model.addAttribute("listSites", pageSite.getContent());
+		model.addAttribute("pages", new int[pageSite.getTotalPages()]);
+		model.addAttribute("currentPage", page);
+		model.addAttribute("motCle", mc);
+		return "siteconnecte";
+	}
+
+	@GetMapping("/formSite")
+	public String formSite(Model model) {
+		model.addAttribute("site", new Site());
+		return "FormSite";
 	}
 }

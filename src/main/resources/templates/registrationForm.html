@@ -11,14 +11,21 @@
 	src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
-<body class="registration-page">
-	<div layout:fragment="content">
+<div th:replace="fragments/header :: header"></div>
+<div layout:fragment="content">
+<div class="body-editForm">
+	<div class="container-fluid">
+	<div class="row jumbotron">
+	<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">
+	</div>
+	</div>
+	</div>
 		<div class="container">
-			<div class="col-md-8">
-				<div class="form-area">
-					<form th:action="@{/save}" method="POST">
-						<br style="clear: both">
-						<h3 style="margin-bottom: 25px; text-align: center;">CREATION D'UN NOUVEAU COMPTE</h3>
+			<div id="login-wraper">
+					<form th:action="@{/memberSave}" method="POST">
+						<legend>
+						CREATION <span class="blue">D'UN NOUVEAU COMPTE</span>
+					</legend>
 						<div class="form-group">
 
 							<label>Pseudo:</label> <input class="form-control" type="text"

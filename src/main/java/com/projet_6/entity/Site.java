@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -20,12 +21,16 @@ public class Site implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long siteId;
 	@NotNull
+	@NotBlank
 	private String nameSite;
 	@NotNull
+	@NotBlank
 	private String orientation;
 	@NotNull
+	@NotBlank
 	private String country;
 	@NotNull
+	@NotBlank
 	private String descriptionSite;
 
 	public Site() {
@@ -38,6 +43,7 @@ public class Site implements Serializable {
 		this.nameSite = nameSite;
 		this.orientation = orientation;
 		this.country = country;
+		this.descriptionSite = descriptionSite;
 	}
 
 	public Long getSiteId() {
@@ -76,7 +82,7 @@ public class Site implements Serializable {
 		return descriptionSite;
 	}
 
-	public void setDescriptionSector(String descriptionSite) {
+	public void setDescriptionSite(String descriptionSite) {
 		this.descriptionSite = descriptionSite;
 	}
 

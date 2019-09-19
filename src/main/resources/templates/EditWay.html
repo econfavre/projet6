@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="layout">
+<head>
+<meta charset="utf-8" />
+<title>Modification d'une voie</title>
+<link rel="stylesheet" type="text/css" href="../css/style.css"
+	th:href="@{/css/style.css}" />
+<script
+	src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+	<div th:replace="fragments/header :: header"></div>
+	<div layout:fragment="content">
+		<div class="body-editForm">
+			<div class="container-fluid">
+				<div class="row jumbotron">
+					<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div id="login-wraper">
+					<form th:action="@{/saveEditSiteForm}"
+						method="post">
+						<legend>
+							MODIFICATION <span class="blue">DE LA VOIE</span>
+						</legend>
+						<div class="form-group">
+							<label for="siteId">Id de la voie :</label><br>
+							<label th:text="${way.wayId}"></label> <input type="hidden"
+								name="wayId" th:value="${way.wayId}" id="wayId"
+								class="form-control"> <span class="red"
+								th:errors="${way.wayId}"></span>
+						</div>
+
+						<div class="form-group">
+							<label for="nameSite">Nom de la voie :</label><br> <input
+								type="text" name="nameWay" th:value="${site.nameSite}"
+								id="nameSite" class="form-control"> <span class="red"
+								th:errors="${site.nameSite}"></span>
+						</div>
+						<div class="form-group">
+							<label for="typeWay">Type de la voie :</label><br> <select
+								class="form-control" id="typeWay" name="typeWay"
+								th:value="${way.typeWay}" required>
+								<option>Equipée</option>
+								<option>Non équipée</option>
+							</select> <span class="text-danger" th:errors="${way.typeWay}"></span>
+						</div>
+						<div class="form-group">
+							<label for="cotation">Cotation de la voie :</label><br> <select
+								class="form-control" id="cotation" name="cotation"
+								th:value="${way.cotation}" required>
+								<option>3a</option>
+								<option>3b</option>
+								<option>3c</option>
+								<option>4a</option>
+								<option>4b</option>
+								<option>4c</option>
+								<option>5a</option>
+								<option>5b</option>
+								<option>5c</option>
+								<option>6a</option>
+								<option>6b</option>
+								<option>6c</option>
+							</select> <span class="text-danger" th:errors="${way.cotation}"></span>
+						</div>
+						<div class="form-group">
+							<label for="height">Hauteur de la voie :</label><br> <input
+								type="text" name="height" th:value="${way.height}" id="height"
+								class="form-control"> <span
+								class="text-danger" th:errors="${way.height}"></span>
+						</div>
+						<div class="form-group">
+							<label for="descriptionWay">Description de la voie :</label><br> <input
+								type="text" name="descriptionWay" th:value="${way.descriptionWay}" id="descriptionWay"
+								class="form-control"> <span
+								class="text-danger" th:errors="${way.descriptionWay}"></span>
+						</div>
+						<button type="submit" class="btn btn-primary pull-right">Enregistrer</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>

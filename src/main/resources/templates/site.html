@@ -22,6 +22,12 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 </head>
 <body class="site-page">
 	<div layout:fragment="content">
+	<div class="container-fluid">
+	<!-- <div class="row jumbotron">
+	<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">
+	</div>
+	</div>  -->
+	</div>
 		<div class="container">
 			<div class="table-wrapper">
 				<div class="table-title">
@@ -34,7 +40,7 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 						<div class="col-sm-8">
 							<a th:href="@{/sites}" class="btn btn-primary"><i
 								class="material-icons">&#xE863;</i> <span>Rafraichir la
-									liste</span></a> <a th:href="@{/formSite}" class="btn btn-info"><i
+									liste</span></a> <a th:href="@{/CreationSite}" class="btn btn-info"><i
 								class="material-icons">&#xE24D;</i> <span>Ajouter un
 									nouveau site</span></a>
 						</div>
@@ -62,12 +68,9 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 						<tr>
 							<th>Id</th>
 							<th>Nom</th>
-							<th>Type</th>
 							<th>Orientation</th>
 							<th>Pays</th>
-							<th>Secteurs</th>
-							<th>Voies</th>
-							<th>Cotation</th>
+							<th>Description</th>
 							<th>Action</th>
 						</tr>
 					</thead>
@@ -75,12 +78,9 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 						<tr th:each="s:${listSites}">
 							<td th:text="${s.siteId}"></td>
 							<td th:text="${s.nameSite}"></td>
-							<td th:text="${s.type}"></td>
 							<td th:text="${s.orientation}"></td>
 							<td th:text="${s.country}"></td>
-							<td th:text="${s.sectorsNumber}"></td>
-							<td th:text="${s.waysNumber}"></td>
-							<td th:text="${s.cotation}"></td>
+							<td th:text="${s.descriptionSite}"></td>
 							<!--<td><a class="btn btn-danger"
 								onclick="return confirm('Etes-vous sur de vouloir supprimer ?')"
 								th:href="@{delete(siteId=${s.siteId}, page=${currentPage}, motCle=${motCle})}">Effacer</a>
@@ -95,7 +95,7 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 								<a onclick="return confirm('Etes-vous sur de vouloir supprimer ?')"
 								th:href="@{delete(siteId=${s.siteId}, page=${currentPage}, motCle=${motCle})}"
 								class="delete" title="Delete" data-toggle="tooltip"><i
-									class="material-icons">&#xE872;</i></a></td>
+									class="material-icons">delete_outline</i></a></td>
 						</tr>
 					</tbody>
 				</table>
