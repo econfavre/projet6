@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-	layout:decorate="layout">
+	layout:decorate="layoutconnecte">
 <head>
 <meta charset="utf-8" />
-<title>Upload un nouveau topo</title>
+<title>Creation d'un nouveau topo</title>
 <link rel="stylesheet" type="text/css" href="../css/style.css"
 	th:href="@{/css/style.css}" />
 <script
@@ -26,7 +26,7 @@
 				<form th:object="${topo}" method="POST" action=""
 				enctype="multipart/form-data">
 					<legend>
-						UPLOAD <span class="blue">D'UN NOUVEAU TOPO</span>
+						CREATION <span class="blue">D'UN NOUVEAU TOPO</span>
 					</legend>
 					<div class="form-group">
 					<label for="topoName">Nom du topo : </label> <label
@@ -43,11 +43,11 @@
 							th:errors="${topo.topoDescription}"></span>
 					</div>
 				<div class="form-group">
-					<label for="fileDatas">Selectionner un fichier :</label> <input
+					<label for="fileDatas">Sélectionner un fichier :</label> <input
 						th:field="*{fileDatas}" type="file" />
 				</div>
 					<div class="pull-right">
-					<button type="submit" value="Upload">Upload</button>
+					<button type="submit" value="Upload">Créer</button>
 						
 				</div>
 				</form>

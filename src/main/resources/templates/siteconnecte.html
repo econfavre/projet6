@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
 xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-	layout:decorate="layout">
+	layout:decorate="layoutconnecte">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,39 +24,6 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 
 
 	<div layout:fragment="content">
-	<hr style="border: 4px solid white;" />
-	 <div class="buttons">
-			<button class="btn btn-info dropdown-toggle" type="button"
-				id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true"
-				aria-expanded="false">MES SITES</button>
-			<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-				<a class="dropdown-item" style="font-size: 12px" href="#">Créer
-					un nouveau Site d'escalade complet</a> <a class="dropdown-item"
-					style="font-size: 12px" href="#">Créer un nouveau site
-					d'escalade </a> <a class="dropdown-item" style="font-size: 12px"
-					href="#">Afficher mes sites</a>
-			</div>
-			<button class="btn btn-info dropdown-toggle" type="button"
-				id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true"
-				aria-expanded="false">MES SECTEURS</button>
-			<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-				<a class="dropdown-item" style="font-size: 12px" th:href="@{SectorCreation}">Créer
-					un nouveau secteur</a> <a class="dropdown-item" style="font-size: 12px"
-					href="#">Afficher mes secteurs</a>
-			</div>
-			<button class="btn btn-info dropdown-toggle" type="button"
-				id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true"
-				aria-expanded="false">MES VOIES</button>
-			<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-				<a class="dropdown-item" style="font-size: 12px" href="#">Créer
-					une nouvelle voie</a> <a class="dropdown-item" style="font-size: 12px"
-					href="#">Afficher mes voies</a>
-			</div>
-
-			<button class="btn btn-primary" type="button">RESERVER UN
-				TOPO</button>
-		</div>
-		  <hr style="border: 4px solid white;" />
 	<div class="container-fluid">
 	<!-- <div class="row jumbotron">
 	<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">

@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layoutconnecte="http://www.ultraq.net.nz/thymeleaf/layoutconnecte">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Esca'pad Site communautaire Escalade Outdoor</title>
+    <meta charset="UTF-8">
+    <title>Responsive Menu</title>
+    <link rel="stylesheet" href="../static/css/bootstap.min.css" th:href="@{css/bootstrap.min.css}">
+<link href="/css/style.css" rel="stylesheet">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 <script
@@ -13,11 +15,9 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-<link href="/css/style.css" rel="stylesheet">
-
 </head>
-<body class="body-home">
-	<header>
+<body>
+       <header>
 		<!-- Navigation -->
 		<nav class="navbar my-nav navbar-expand-md sticky-top">
 			<div class="container-fluid">
@@ -28,43 +28,28 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbarResponsive">
 					<ul class="navbar nav ml-auto">
-						<li class="active"><a class="nav-link" href="#">ACCUEIL</a></li>
+						<li class="active"><a class="nav-link" th:href="@{/home}">ACCUEIL</a></li>
 
 						<li class="nav-item"><a class="nav-link" th:href="@{/sites}">SITES</a></li>
 						<li class="nav-item"><a class="nav-link" href="@{/newtopo}">TOPOS</a></li>
-						<li class="nav-item"><a class="nav-link"
-							th:href="@{/searchForm}">RECHERCHE</a></li>
+						<li class="nav-item"><a class="nav-link" th:href="@{/searchForm}">RECHERCHE</a></li>
 					</ul>
 
 					<div class="dropdown">
 						<button class="btn btn-secondary dropdown-toggle" type="button"
 							id="dropdownMenuButton" data-toggle="dropdown"
-							aria-haspopup="true" aria-expanded="false">MON COMPTE</button>
+							aria-haspopup="true" style="font-size:18px" aria-expanded="false">MON COMPTE</button>
 						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-							<a class="dropdown-item" style="font-size: 12px"
-								th:href="@{/logout}">Deconnexion</a> <a class="dropdown-item"
-								style="font-size: 12px" th:href="@{/ModifAccountForm}">Mes
-								informations</a>
+							<a class="dropdown-item" style="font-size:12px" th:href="@{/login}">Connexion</a> <a
+								class="dropdown-item" style="font-size:12px" th:href="@{/RegistrationForm}">Créer un compte</a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</nav>
-
-
-		<div class="wrapper">
-			<div class="inner">
-				<div class="content">
-					<p></p>
-
-					<br>
-					<h2>BIENVENUE AUX AMOUREUX DE L'ESCALADE OUTDOOR</h2>
-				</div>
-			</div>
-		</div>
 		<div class="buttons">
 			<div class="btn-group">
-				<button type="button" class="btn btn-primary dropdown-toggle"
+				<button type="button" class="btn btn-primary btn-sm dropdown-toggle"
 					data-toggle="dropdown">
 					MES SITES <span class="caret"></span>
 				</button>
@@ -77,7 +62,7 @@
 				</div>
 			</div>
 			<div class="btn-group">
-				<button type="button" class="btn btn-primary dropdown-toggle"
+				<button type="button" class="btn btn-primary btn-sm dropdown-toggle"
 					data-toggle="dropdown">
 					MES SECTEURS <span class="caret"></span>
 				</button>
@@ -88,7 +73,7 @@
 				</div>
 			</div>
 			<div class="btn-group">
-				<button type="button" class="btn btn-primary dropdown-toggle"
+				<button type="button" class="btn btn-primary btn-sm dropdown-toggle"
 					data-toggle="dropdown">
 					MES VOIES <span class="caret"></span>
 				</button>
@@ -99,7 +84,7 @@
 				</div>
 			</div>
 			<div class="btn-group">
-				<button type="button" class="btn btn-primary dropdown-toggle"
+				<button type="button" class="btn btn-primary btn-sm dropdown-toggle"
 					data-toggle="dropdown">
 					MES TOPOS <span class="caret"></span>
 				</button>
@@ -109,48 +94,12 @@
 						href="#">Afficher mes topos</a>
 				</div>
 			</div>
-			<button class="btn btn-danger" type="button">RESERVER UN
+			<button class="btn btn-danger btn-sm" type="button">RESERVER UN
 				TOPO</button>
 		</div>
 		<p></p>
-
-		<div class="container-fluid padding">
-			<div class="row padding">
-				<div class="col-md-4">
-					<div class="card">
-						<img class="card-imd-top"
-							src="/pictures/beginners-guide-rock-climbing_WATCH.jpg">
-						<div class="card-body">
-							<h4>La grande Rocheuse</h4>
-							<a href="#" class="btn btn-danger">Decouvrir</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="card">
-						<img class="card-imd-top"
-							src="/pictures/f2-02-belvedere-climbing-arco-360gardalife.jpg">
-						<div class="card-body">
-							<h4>Canyon Bay</h4>
-							<a href="#" class="btn btn-danger">Decouvrir</a>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-md-4">
-					<div class="card">
-						<img class="card-imd-top" src="/pictures/falaises-d-etretat.jpg">
-						<div class="card-body">
-							<h4>Etretat</h4>
-							<a href="#" class="btn btn-danger">Decouvrir</a>
-						</div>
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</header>
+       
+   </header>
+<section layout:fragment="content"></section>
 </body>
 </html>
-
-

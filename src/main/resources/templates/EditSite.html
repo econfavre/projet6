@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-	layout:decorate="layout">
+	layout:decorate="layoutconnecte">
 <head>
 <meta charset="utf-8" />
-<title>Modification d'un site</title>
+<title>Modification du site</title>
 <link rel="stylesheet" type="text/css" href="../css/style.css"
 	th:href="@{/css/style.css}" />
 <script
@@ -29,7 +29,7 @@
 							MODIFICATION <span class="blue">DU SITE</span>
 						</legend>
 						<div class="form-group">
-							<label for="siteId">Id du site:</label><br>
+							<label for="siteId">Id du site : </label><br>
 							<label th:text="${site.siteId}"></label> <input type="hidden"
 								name="siteId" th:value="${site.siteId}" id="siteId"
 								class="form-control"> <span class="red"
@@ -37,13 +37,13 @@
 						</div>
 
 						<div class="form-group">
-							<label for="nameSite">Nom du site:</label><br> <input
+							<label for="nameSite">Nom du site : </label><br> <input
 								type="text" name="nameSite" th:value="${site.nameSite}"
 								id="nameSite" class="form-control"> <span class="red"
 								th:errors="${site.nameSite}"></span>
 						</div>
 						<div class="form-group">
-							<label for="orientation">Orientation du site:</label><br> <select
+							<label for="orientation">Orientation du site : </label><br> <select
 								class="form-control" id="orientation" name="orientation"
 								th:value="${site.orientation}" required>
 								<option>Sud</option>
@@ -57,7 +57,7 @@
 							</select> <span class="text-danger" th:errors="${site.orientation}"></span>
 						</div>
 						<div class="form-group">
-							<label for="country">Localisation du site:</label><br> <select
+							<label for="country">Localisation du site : </label><br> <select
 								class="form-control" id="country" name="country"
 								th:value="${site.country}" required>
 								<option>France</option>
@@ -70,12 +70,12 @@
 							</select> <span class="text-danger" th:errors="${site.country}"></span>
 						</div>
 						<div class="form-group">
-							<label for="descriptionSite">Description du site :</label><br>
+							<label for="descriptionSite">Description du site : </label><br>
 							<input type="text" name="descriptionSite" th:value="${site.descriptionSite}" id="descriptionSite"
 								 class="form-control">
 								<span class="text-danger" th:errors="${site.descriptionSite}"></span>
 						</div>
-						<button type="submit" class="btn btn-primary pull-right">Enregistrer</button>
+						<button type="submit" class="btn btn-primary pull-right">Modifier</button>
 					</form>
 				</div>
 			</div>

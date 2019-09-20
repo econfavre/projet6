@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-	layout:decorate="layout">
+	layout:decorate="layoutconnecte">
 <head>
 <meta charset="utf-8" />
 <title>Modification d'une voie</title>
@@ -43,7 +43,7 @@
 								th:errors="${site.nameSite}"></span>
 						</div>
 						<div class="form-group">
-							<label for="typeWay">Type de la voie :</label><br> <select
+							<label for="typeWay">Type de la voie : </label><br> <select
 								class="form-control" id="typeWay" name="typeWay"
 								th:value="${way.typeWay}" required>
 								<option>Equipée</option>
@@ -51,7 +51,7 @@
 							</select> <span class="text-danger" th:errors="${way.typeWay}"></span>
 						</div>
 						<div class="form-group">
-							<label for="cotation">Cotation de la voie :</label><br> <select
+							<label for="cotation">Cotation de la voie : </label><br> <select
 								class="form-control" id="cotation" name="cotation"
 								th:value="${way.cotation}" required>
 								<option>3a</option>
@@ -69,18 +69,18 @@
 							</select> <span class="text-danger" th:errors="${way.cotation}"></span>
 						</div>
 						<div class="form-group">
-							<label for="height">Hauteur de la voie :</label><br> <input
+							<label for="height">Hauteur de la voie : </label><br> <input
 								type="text" name="height" th:value="${way.height}" id="height"
 								class="form-control"> <span
 								class="text-danger" th:errors="${way.height}"></span>
 						</div>
 						<div class="form-group">
-							<label for="descriptionWay">Description de la voie :</label><br> <input
+							<label for="descriptionWay">Description de la voie : </label><br> <input
 								type="text" name="descriptionWay" th:value="${way.descriptionWay}" id="descriptionWay"
 								class="form-control"> <span
 								class="text-danger" th:errors="${way.descriptionWay}"></span>
 						</div>
-						<button type="submit" class="btn btn-primary pull-right">Enregistrer</button>
+						<button type="submit" class="btn btn-primary pull-right">Modifier</button>
 					</form>
 				</div>
 			</div>

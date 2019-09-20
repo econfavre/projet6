@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="layout">
+<head>
+<meta charset="utf-8" />
+<title>Modification du topo</title>
+<link rel="stylesheet" type="text/css" href="../css/style.css"
+	th:href="@{/css/style.css}" />
+<script
+	src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+<div th:replace="fragments/header :: header"></div>
+<div layout:fragment="content">
+<div class="body-editForm">
+	<div class="container-fluid">
+	<div class="row jumbotron">
+	<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">
+	</div>
+	</div>
+	</div>
+		<div class="container">
+			<div id="login-wraper">
+				<form th:object="${topo}" method="POST" action=""
+				enctype="multipart/form-data">
+					<legend>
+						MODIFICATION <span class="blue">DU TOPO</span>
+					</legend>
+					<div class="form-group">
+					<label for="topoName">Nom du topo : </label> <label
+							th:text="${topo.topoName}"></label> <input type="text"
+							name="topoName" th:value="${topo.topoName}" id="topoName"
+							class="form-control"> <span class="red"
+							th:errors="${topo.topoName}"></span>
+				</div>
+				<div class="form-group">
+						<label for="topoDescription">Description du topo : </label><br> <label
+							th:text="${topo.topoDescription}"></label> <input th:field="*{topoDescription}" type="text"
+							name="topoDescription" th:value="${topo.topoDescription}" id="topoDescription"
+							class="form-control" style="width: 300px;"> <span class="red"
+							th:errors="${topo.topoDescription}"></span>
+					</div>
+				<div class="form-group">
+					<label for="fileDatas">Sélectionner un fichier : </label> <input
+						th:field="*{fileDatas}" type="file" />
+				</div>
+					<div class="pull-right">
+					<button type="submit" value="Upload">Modifier</button>
+						
+				</div>
+				</form>
+			</div>
+		</div>
+		</div>
+	</div>
+	<div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>

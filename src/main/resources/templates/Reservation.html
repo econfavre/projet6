@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-	layout:decorate="layoutconnecte">
+	layout:decorate="layout">
 <head>
 <meta charset="utf-8" />
 <title>Creation d'un secteur</title>
@@ -23,10 +23,9 @@
 			</div>
 			<div class="container">
 				<div id="login-wraper">
-					<form th:action="@{/saveNewSector}" method="post">
+					<form th:action="@{/Reservation}" method="post">
 						<br style="clear: both">
-						<h3 style="margin-bottom: 25px; text-align: center;">CREATION
-							D'UN NOUVEAU SECTEUR</h3>
+						<h3 style="margin-bottom: 25px; text-align: center;">GESTION DES RESERVATIONS</h3>
 						<div class="form-group">
 							<label for="nameSector">Nom du secteur :</label><br> <input
 								type="text" name="nameSector" th:value="${sector.nameSector}"
