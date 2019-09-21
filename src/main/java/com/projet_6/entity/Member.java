@@ -1,11 +1,8 @@
 package com.projet_6.entity;
 
 import java.io.Serializable;
-import java.sql.Blob;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -14,41 +11,32 @@ import javax.validation.constraints.Size;
 @Entity
 public class Member implements Serializable {
 	private static final long serialVersionUID = 1L;
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long memberId;
 	@NotBlank
 	@NotNull
 	private String email;
 	@NotBlank
 	@NotNull
-	@Size(min = 4, max = 30)
-	private String passWord;
+	@Size(min = 4, max = 255)
+	private String password;
+
+	@Id
 	@NotBlank
 	@NotNull
-	@Size(min = 4, max = 30)
-	private String pseudo;
-	// private Blob imageMember;
+	@Size(min = 4, max = 255)
+	private String username;
+
+	private boolean active = true;
 
 	public Member() {
 		super();
 	}
 
-	public Member(Long memberId, String email, String passWord, String pseudo, Blob imageMember) {
+	public Member(String email, String password, String username, Boolean active) {
 		super();
 		this.email = email;
-		this.passWord = passWord;
-		this.pseudo = pseudo;
-		// this.setImageMember(imageMember);
-	}
-
-	public Long getMemberId() {
-		return memberId;
-	}
-
-	public void setMemberId(Long memberId) {
-		this.memberId = memberId;
+		this.password = password;
+		this.username = username;
+		this.active = active;
 	}
 
 	public void setEmail(String email) {
@@ -59,27 +47,28 @@ public class Member implements Serializable {
 		return email;
 	}
 
-	public void setPassWord(String passWord) {
-		this.passWord = passWord;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
-	public String getPassWord() {
-		return passWord;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setPseudo(String pseudo) {
-		this.pseudo = pseudo;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
-	public String getPseudo() {
-		return pseudo;
+	public String getUsername() {
+		return username;
 	}
 
-	// public Blob getImageMember() {
-	// return imageMember;
-	// }
+	public boolean isActive() {
+		return active;
+	}
 
-	// public void setImageMember(Blob imageMember) {
-	// this.imageMember = imageMember;
-	// }
+	public void setActive(boolean active) {
+		this.active = active;
+	}
+
 }

@@ -93,10 +93,4 @@ public class SiteController {
 		model.addAttribute("motCle", mc);
 		return "siteconnecte";
 	}
-
-	@GetMapping("/formSite")
-	public String formSite(Model model) {
-		model.addAttribute("site", new Site());
-		return "FormSite";
-	}
 }

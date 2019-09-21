@@ -57,7 +57,7 @@ public class WayController {
 	@GetMapping("/CreationWay")
 	public String wayCreation(Model model) {
 		model.addAttribute("way", new Way());
-		return "CreationWay";
+		return "/CreationWay";
 	}
 
 	@GetMapping("/listWay")

@@ -3,12 +3,17 @@ package com.projet_6.entity;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.web.multipart.MultipartFile;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Topo implements Serializable {
@@ -24,6 +29,11 @@ public class Topo implements Serializable {
 	@NotNull
 	private String topoName;
 
+	@ManyToOne(fetch = FetchType.LAZY, optional = false)
+	@JoinColumn(name = "member.username", nullable = false)
+	@JsonIgnore
+	private Member member;
+
 	@NotNull
 	private String topoDescription;
 
@@ -35,12 +45,13 @@ public class Topo implements Serializable {
 		super();
 	}
 
-	public Topo(Long topoId, String topoName, String topoDescription, MultipartFile[] fileDatas) {
+	public Topo(Long topoId, String topoName, String topoDescription, MultipartFile[] fileDatas, Member member) {
 		super();
 		this.topoId = topoId;
 		this.topoName = topoName;
 		this.topoDescription = topoDescription;
 		this.fileDatas = fileDatas;
+		this.member = member;
 	}
 
 	public Long getTopoId() {
@@ -73,6 +84,14 @@ public class Topo implements Serializable {
 
 	public void setFileDatas(MultipartFile[] fileDatas) {
 		this.fileDatas = fileDatas;
+	}
+
+	public Member getMember() {
+		return member;
+	}
+
+	public void setMember(Member member) {
+		this.member = member;
 	}
 
 }

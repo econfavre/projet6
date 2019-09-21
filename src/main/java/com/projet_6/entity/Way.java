@@ -3,10 +3,15 @@ package com.projet_6.entity;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Way implements Serializable {
@@ -28,11 +33,17 @@ public class Way implements Serializable {
 	@NotNull
 	private String descriptionWay;
 
+	@ManyToOne(fetch = FetchType.LAZY, optional = false)
+	@JoinColumn(name = "sector.sectorId", nullable = false)
+	@JsonIgnore
+	private Sector sector;
+
 	public Way() {
 		super();
 	}
 
-	public Way(Long wayId, String nameWay, String typeWay, String cotation, int height, String descriptionWay) {
+	public Way(Long wayId, String nameWay, String typeWay, String cotation, int height, String descriptionWay,
+			Sector sector) {
 		super();
 		this.wayId = wayId;
 		this.nameWay = nameWay;
@@ -40,6 +51,7 @@ public class Way implements Serializable {
 		this.cotation = cotation;
 		this.height = height;
 		this.descriptionWay = descriptionWay;
+		this.sector = sector;
 	}
 
 	public Long getWayId() {
@@ -90,4 +102,11 @@ public class Way implements Serializable {
 		this.height = height;
 	}
 
+	public Sector getSector() {
+		return sector;
+	}
+
+	public void setSector(Sector sector) {
+		this.sector = sector;
+	}
 }

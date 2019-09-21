@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-	layout:decorate="layout">
+	layout:decorate="layoutconnecte">
 <head>
 <meta charset="utf-8" />
-<title>Creation d'un secteur</title>
+<title>Réservation du topo</title>
 <link rel="stylesheet" type="text/css" href="../css/style.css"
 	th:href="@{/css/style.css}" />
 <script
@@ -12,38 +12,55 @@
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
 <body>
-	<div th:replace="fragments/header :: header"></div>
-	<div layout:fragment="content">
-		<div class="body-editForm">
-			<div class="container-fluid">
-				<div class="row jumbotron">
-					<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">
-					</div>
+<div th:replace="fragments/header :: header"></div>
+<div layout:fragment="content">
+<div class="body-editForm">
+	<div class="container-fluid">
+	<div class="row jumbotron">
+	<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">
+	</div>
+	</div>
+	</div>
+		<div class="container">
+			<div id="login-wraper">
+				<form>
+					<legend>
+						RESERVATION <span class="blue">D'UN TOPO</span>
+					</legend>
+					<div class="form-group">
+					<label>Date de début de l'emprunt : </label> <input type="date"
+							name="reservationBeginDate"  id="reservationBeginDate"
+							class="form-control" style="width: 100%"> 
 				</div>
-			</div>
-			<div class="container">
-				<div id="login-wraper">
-					<form th:action="@{/Reservation}" method="post">
-						<br style="clear: both">
-						<h3 style="margin-bottom: 25px; text-align: center;">GESTION DES RESERVATIONS</h3>
-						<div class="form-group">
-							<label for="nameSector">Nom du secteur :</label><br> <input
-								type="text" name="nameSector" th:value="${sector.nameSector}"
-								id="nameSector" class="form-control"> <span
-								class="text-danger" th:errors="${sector.nameSector}"></span>
-						</div>
-						<div class="form-group">
-							<label for="descriptionSector">Description du secteur :</label><br> <input
-								type="text" name="descriptionSector" th:value="${sector.descriptionSector}" id="descriptionSector"
-								class="form-control"> <span
-								class="text-danger" th:errors="${sector.descriptionSector}"></span>
-						</div>
-						<button type="submit" id="submit" name="submit"
-							class="btn btn-primary pull-right">Enregistrer</button>
-					</form>
+				<div class="form-group">
+					<label>Date de fin de l'emprunt : </label> <input type="date"
+							name="reservationEndDate" id="reservationEndDate"
+							class="form-control" style="width: 100%"> 
 				</div>
+				<div class="form-group">
+                        <h5 style="text-align: center">Message</h5>
+                        <p>
+                            Envoyez un message au propriétaire du topo afin de vous organiser avec lui,
+                            pour récupérer le topo dans les meilleurs délais !
+                        </p>
+                        <label for="textareaMessage">Message : </label>
+                        <textarea name="messagerie.message" id="textareaMessage" cols="40" rows="5" class="form-control"
+                                  style="width: 100%"></textarea>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-md-5">
+                            <button name="resaTopo.statut" value="demande en cours" class="btn btn-primary" type="submit" style="width: 100%">Envoyez</button>
+                        </div>
+                        <div class="col-md-5">
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#cancelResa" style="width: 100%">Annuler</button>
+                        </div>
+                    </div>
+				</form>
 			</div>
 		</div>
+		</div>
 	</div>
+	<div th:replace="fragments/footer :: footer"></div>
 </body>
 </html>

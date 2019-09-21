@@ -8,6 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.projet_6.dao.MemberRepository;
 import com.projet_6.entity.Member;
@@ -28,7 +30,17 @@ public class MemberController {
 		if (bindingResult.hasErrors())
 			return "RegistrationForm";
 		memberRepository.save(member);
-		return "redirect:/home"; // on redirige vers une nouvelle page de confirmation que l'on doit creee dan
+		return "redirect:/homeconnecte"; // on redirige vers une nouvelle page de confirmation que l'on doit creee
+											// dan
+	}
+
+	@RequestMapping(value = "/saveEditRegistrationForm", method = RequestMethod.POST)
+	public String saveEditRegistrationForm(@Valid Member member, BindingResult bindingResult, Model model) {
+		System.out.println(bindingResult);
+		if (bindingResult.hasErrors())
+			return "EditRegistrationForm";
+		memberRepository.save(member);
+		return "redirect:/homeconnecte"; // on redirige vers une nouvelle page de confirmation que l'on doit creee dan
 	}
 
 	@GetMapping("/home")
@@ -46,9 +58,9 @@ public class MemberController {
 		return "403";
 	}
 
-	@GetMapping("/login")
-	public String login() {
-		return "login";
+	@GetMapping("/")
+	public String def() {
+		return "redirect:/homeconnecte";
 	}
 
 }

@@ -31,7 +31,7 @@
 						<li class="active"><a class="nav-link" href="#">ACCUEIL</a></li>
 
 						<li class="nav-item"><a class="nav-link" th:href="@{/sites}">SITES</a></li>
-						<li class="nav-item"><a class="nav-link" href="@{/newtopo}">TOPOS</a></li>
+						<li class="nav-item"><a class="nav-link" href="#">TOPOS</a></li>
 						<li class="nav-item"><a class="nav-link"
 							th:href="@{/searchForm}">RECHERCHE</a></li>
 					</ul>
@@ -93,7 +93,7 @@
 					MES VOIES <span class="caret"></span>
 				</button>
 				<div class="dropdown-menu" role="menu">
-					<a class="dropdown-item" style="" href="#">Créer une nouvelle
+					<a class="dropdown-item" style="" th:href="@{/CreationWay}">Créer une nouvelle
 						voie</a><a class="dropdown-item" style=""
 						href="#">Afficher mes voies</a>
 				</div>
@@ -104,12 +104,12 @@
 					MES TOPOS <span class="caret"></span>
 				</button>
 				<div class="dropdown-menu" role="menu">
-					<a class="dropdown-item" style="" href="#">Créer un nouveau
+					<a class="dropdown-item" style="" th:href="@{/CreationTopo}">Créer un nouveau
 						topo</a><a class="dropdown-item" style=""
 						href="#">Afficher mes topos</a>
 				</div>
 			</div>
-			<button class="btn btn-danger" type="button">RESERVER UN
+			<button class="btn btn-danger" type="button" th:href="@{/Reservation}" >RESERVER UN
 				TOPO</button>
 		</div>
 		<p></p>
