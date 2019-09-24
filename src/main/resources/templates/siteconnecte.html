@@ -52,7 +52,7 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 					<div class="row">
 						<div class="col-sm-12">
 							<div class="filter-group">
-								<form th:action="@{sites}" method="get">
+								<form th:action="@{/sites}" method="get">
 									<label>Nom du site</label> <input type="text"
 										class="form-control" name="motCle" />
 									<button class="btn btn-primary">Rechercher</button>
@@ -92,10 +92,10 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 							<td><a href="#" download class="view"
 								title="Telecharger le topo]" data-toggle="tooltip"><i
 									class="material-icons">&#xE417;</i></a> <a
-								th:href="@{edit(siteId=${s.siteId})}" class="edit" title="Edit"
+								th:href="@{/edit(siteId=${s.siteId})}" class="edit" title="Edit"
 								data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
 								<a onclick="return confirm('Etes-vous sur de vouloir supprimer ?')"
-								th:href="@{delete(siteId=${s.siteId}, page=${currentPage}, motCle=${motCle})}"
+								th:href="@{/delete(siteId=${s.siteId}, page=${currentPage}, motCle=${motCle})}"
 								class="delete" title="Delete" data-toggle="tooltip"><i
 									class="material-icons">delete_outline</i></a></td>
 						</tr>

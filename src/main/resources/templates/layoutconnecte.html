@@ -28,10 +28,10 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbarResponsive">
 					<ul class="navbar nav ml-auto">
-						<li class="active"><a class="nav-link" th:href="@{/home}">ACCUEIL</a></li>
+						<li class="active"><a class="nav-link" th:href="@{/homeconnecte}">ACCUEIL</a></li>
 
 						<li class="nav-item"><a class="nav-link" th:href="@{/sites}">SITES</a></li>
-						<li class="nav-item"><a class="nav-link" href="@{/newtopo}">TOPOS</a></li>
+						<li class="nav-item"><a class="nav-link" href="#">TOPOS</a></li>
 						<li class="nav-item"><a class="nav-link" th:href="@{/searchForm}">RECHERCHE</a></li>
 					</ul>
 
@@ -40,7 +40,7 @@
 							id="dropdownMenuButton" data-toggle="dropdown"
 							aria-haspopup="true" style="font-size:18px" aria-expanded="false">MON COMPTE</button>
 						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-							<a class="dropdown-item" style="font-size:12px" th:href="@{/login}">Connexion</a> <a
+							<a class="dropdown-item" style="font-size:12px" th:href="@{login?logout}">Deconnexion</a> <a
 								class="dropdown-item" style="font-size:12px" th:href="@{/RegistrationForm}">Créer un compte</a>
 						</div>
 					</div>
@@ -78,7 +78,7 @@
 					MES VOIES <span class="caret"></span>
 				</button>
 				<div class="dropdown-menu" role="menu">
-					<a class="dropdown-item" style="" href="#">Créer une nouvelle
+					<a class="dropdown-item" style="" th:href="@{/CreationWay}">Créer une nouvelle
 						voie</a><a class="dropdown-item" style=""
 						href="#">Afficher mes voies</a>
 				</div>
@@ -89,12 +89,12 @@
 					MES TOPOS <span class="caret"></span>
 				</button>
 				<div class="dropdown-menu" role="menu">
-					<a class="dropdown-item" style="" href="#">Créer un nouveau
+					<a class="dropdown-item" style="" th:href="@{/CreationTopo}">Créer un nouveau
 						topo</a><a class="dropdown-item" style=""
 						href="#">Afficher mes topos</a>
 				</div>
 			</div>
-			<button class="btn btn-danger btn-sm" type="button">RESERVER UN
+			<button class="btn btn-danger btn-sm" type="button" th:href="@{/Reservation}">RESERVER UN
 				TOPO</button>
 		</div>
 		<p></p>

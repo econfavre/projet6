@@ -5,6 +5,8 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -24,9 +26,12 @@ public class SiteController {
 
 	// @RequestMapping(value = "/user/index", method=RequestMethod.GET)
 	@GetMapping("/sites")
-	public String index(Model model, @RequestParam(name = "page", defaultValue = "0") int page,
+	public String listSites(Model model, @RequestParam(name = "page", defaultValue = "0") int page,
 			@RequestParam(name = "motCle", defaultValue = "") String mc) {
 		Page<Site> pageSite = siteRepository.findByNameSiteContains(mc, PageRequest.of(page, 5));
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		System.out.println(authentication.getName());
+
 		model.addAttribute("listSites", pageSite.getContent());
 		model.addAttribute("pages", new int[pageSite.getTotalPages()]);
 		model.addAttribute("currentPage", page);
@@ -48,10 +53,12 @@ public class SiteController {
 	}
 
 	@RequestMapping(value = "/saveNewSite", method = RequestMethod.POST)
-	public String save(@Valid Site site, BindingResult bindingResult, Model model) {
+	public String save(@Valid Site site, String username, BindingResult bindingResult, Model model) {
 		System.out.println(bindingResult);
 		if (bindingResult.hasErrors())
 			return "CreationSite";
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		username = authentication.getName();
 		siteRepository.save(site);
 		return "redirect:/sites"; // on redirige vers une nouvelle page de confirmation que l'on doit creee dan
 	}

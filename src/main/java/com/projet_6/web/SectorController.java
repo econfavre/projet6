@@ -71,7 +71,7 @@ public class SectorController {
 		if (bindingResult.hasErrors())
 			return "CreationSector";
 		sectorRepository.save(sector);
-		return "redirect:/sector"; // on redirige vers une nouvelle page de confirmation que l'on doit creee dan
+		return "redirect:/user/sector"; // on redirige vers une nouvelle page de confirmation que l'on doit creee dan
 	}
 
 	@RequestMapping(value = "/saveEditSectorForm", method = RequestMethod.POST)

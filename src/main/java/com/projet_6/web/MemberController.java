@@ -40,7 +40,8 @@ public class MemberController {
 		if (bindingResult.hasErrors())
 			return "EditRegistrationForm";
 		memberRepository.save(member);
-		return "redirect:/homeconnecte"; // on redirige vers une nouvelle page de confirmation que l'on doit creee dan
+		return "redirect:/homeconnecte"; // on redirige vers une nouvelle page de confirmation que l'on doit creee
+											// dan
 	}
 
 	@GetMapping("/home")
@@ -58,9 +59,14 @@ public class MemberController {
 		return "403";
 	}
 
-	@GetMapping("/")
-	public String def() {
-		return "redirect:/homeconnecte";
+	@GetMapping("/login")
+	public String connexion() {
+		return "login";
+	}
+
+	@GetMapping("/login?logout")
+	public String logout() {
+		return "login?logout";
 	}
 
 }

@@ -11,19 +11,20 @@ import javax.validation.constraints.Size;
 @Entity
 public class Member implements Serializable {
 	private static final long serialVersionUID = 1L;
-	@NotBlank
-	@NotNull
-	private String email;
-	@NotBlank
-	@NotNull
-	@Size(min = 4, max = 255)
-	private String password;
-
 	@Id
 	@NotBlank
 	@NotNull
 	@Size(min = 4, max = 255)
 	private String username;
+
+	@NotBlank
+	@NotNull
+	private String email;
+
+	@NotBlank
+	@NotNull
+	@Size(min = 4, max = 255)
+	private String password;
 
 	private boolean active = true;
 
@@ -31,12 +32,20 @@ public class Member implements Serializable {
 		super();
 	}
 
-	public Member(String email, String password, String username, Boolean active) {
+	public Member(String username, String email, String password, Boolean active) {
 		super();
+		this.username = username;
 		this.email = email;
 		this.password = password;
-		this.username = username;
 		this.active = active;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getUsername() {
+		return username;
 	}
 
 	public void setEmail(String email) {
@@ -53,14 +62,6 @@ public class Member implements Serializable {
 
 	public String getPassword() {
 		return password;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	public String getUsername() {
-		return username;
 	}
 
 	public boolean isActive() {
