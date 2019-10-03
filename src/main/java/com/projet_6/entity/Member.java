@@ -12,9 +12,12 @@ import javax.validation.constraints.Size;
 public class Member implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
+//	@GeneratedValue(strategy = GenerationType.IDENTITY)
+//	private Long memberId;
+
 	@NotBlank
 	@NotNull
-	@Size(min = 4, max = 255)
+	@Size(min = 4, max = 50)
 	private String username;
 
 	@NotBlank
@@ -23,10 +26,13 @@ public class Member implements Serializable {
 
 	@NotBlank
 	@NotNull
-	@Size(min = 4, max = 255)
+	@Size(min = 4, max = 30)
 	private String password;
 
 	private boolean active = true;
+
+//	@OneToMany(mappedBy = "member")
+//	private List<Site> sites;
 
 	public Member() {
 		super();
@@ -38,7 +44,16 @@ public class Member implements Serializable {
 		this.email = email;
 		this.password = password;
 		this.active = active;
+
 	}
+
+//	public Long getMemberId() {
+//		return memberId;
+//	}
+//
+//	public void setMemberId(Long memberId) {
+//		this.memberId = memberId;
+//	}
 
 	public void setUsername(String username) {
 		this.username = username;

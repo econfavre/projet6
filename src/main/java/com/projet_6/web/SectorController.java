@@ -1,5 +1,7 @@
 package com.projet_6.web;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,13 +16,18 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.projet_6.dao.SectorRepository;
+import com.projet_6.dao.SiteRepository;
 import com.projet_6.entity.Sector;
+import com.projet_6.entity.Site;
 
 @Controller
 public class SectorController {
 
 	@Autowired
 	SectorRepository sectorRepository;
+
+	@Autowired
+	SiteRepository siteRepository;
 
 	// @RequestMapping(value = "/user/index", method=RequestMethod.GET)
 	@GetMapping("/sectors")
@@ -49,6 +56,8 @@ public class SectorController {
 		// que j'initialise avec s et que j'envoie par la suite dans le formulaire via
 		// model.
 		// Site site = s.get();
+		List<Site> listNameSite = siteRepository.findAll();
+		model.addAttribute("listNameSite", listNameSite);
 		model.addAttribute("sector", sector);
 		// }
 		return "EditSector"; // on redirige vers une nouvelle page de confirmation que l'on doit creee dan
@@ -56,6 +65,8 @@ public class SectorController {
 
 	@GetMapping("/CreationSector")
 	public String sectorCreation(Model model) {
+		List<Site> listNameSite = siteRepository.findAll();
+		model.addAttribute("listNameSite", listNameSite);
 		model.addAttribute("sector", new Sector());
 		return "CreationSector";
 	}
@@ -70,8 +81,9 @@ public class SectorController {
 		System.out.println(bindingResult);
 		if (bindingResult.hasErrors())
 			return "CreationSector";
+		sector.setSite("namesite");
 		sectorRepository.save(sector);
-		return "redirect:/user/sector"; // on redirige vers une nouvelle page de confirmation que l'on doit creee dan
+		return "redirect:/sector"; // on redirige vers une nouvelle page de confirmation que l'on doit creee dan
 	}
 
 	@RequestMapping(value = "/saveEditSectorForm", method = RequestMethod.POST)

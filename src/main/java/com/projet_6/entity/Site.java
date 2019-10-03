@@ -3,7 +3,6 @@ package com.projet_6.entity;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -11,8 +10,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Site implements Serializable {
@@ -38,9 +35,13 @@ public class Site implements Serializable {
 	@NotBlank
 	private String descriptionSite;
 
-	@ManyToOne(fetch = FetchType.LAZY, optional = false)
-	@JoinColumn(name = "member.username", nullable = false)
-	@JsonIgnore
+//	@ManyToOne(fetch = FetchType.LAZY, optional = false)
+//	@JoinColumn(name = "member_Id", nullable = false)
+//	@JsonIgnore
+//	private Member member;
+
+	@ManyToOne
+	@JoinColumn(name = "username", nullable = false)
 	private Member member;
 
 	public Site() {

@@ -1,5 +1,6 @@
 package com.projet_6.web;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.projet_6.dao.MemberRepository;
 import com.projet_6.dao.SiteRepository;
 import com.projet_6.entity.Site;
 import com.projet_6.entity.Way;
@@ -24,14 +26,14 @@ public class SiteController {
 	@Autowired
 	private SiteRepository siteRepository;
 
+	@Autowired
+	private MemberRepository memberRepository;
+
 	// @RequestMapping(value = "/user/index", method=RequestMethod.GET)
 	@GetMapping("/sites")
 	public String listSites(Model model, @RequestParam(name = "page", defaultValue = "0") int page,
 			@RequestParam(name = "motCle", defaultValue = "") String mc) {
 		Page<Site> pageSite = siteRepository.findByNameSiteContains(mc, PageRequest.of(page, 5));
-		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-		System.out.println(authentication.getName());
-
 		model.addAttribute("listSites", pageSite.getContent());
 		model.addAttribute("pages", new int[pageSite.getTotalPages()]);
 		model.addAttribute("currentPage", page);
@@ -53,12 +55,12 @@ public class SiteController {
 	}
 
 	@RequestMapping(value = "/saveNewSite", method = RequestMethod.POST)
-	public String save(@Valid Site site, String username, BindingResult bindingResult, Model model) {
+	public String save(@Valid Site site, BindingResult bindingResult, Model model, HttpServletRequest request) {
 		System.out.println(bindingResult);
 		if (bindingResult.hasErrors())
 			return "CreationSite";
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-		username = authentication.getName();
+		site.setMember(memberRepository.findByUsername(authentication.getName()));
 		siteRepository.save(site);
 		return "redirect:/sites"; // on redirige vers une nouvelle page de confirmation que l'on doit creee dan
 	}

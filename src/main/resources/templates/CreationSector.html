@@ -28,16 +28,24 @@
 						<h3 style="margin-bottom: 25px; text-align: center;">CREATION
 							D'UN NOUVEAU SECTEUR</h3>
 						<div class="form-group">
+							<label for="nameSite">Nom du site :</label><br> 
+							<select>
+								<option th:each="n:${listNameSite}" th:value="${n.nameSite}"
+									th:text="${n.nameSite}"></option>
+							</select>
+						</div>
+						<div class="form-group">
 							<label for="nameSector">Nom du secteur :</label><br> <input
 								type="text" name="nameSector" th:value="${sector.nameSector}"
 								id="nameSector" class="form-control"> <span
 								class="text-danger" th:errors="${sector.nameSector}"></span>
 						</div>
 						<div class="form-group">
-							<label for="descriptionSector">Description du secteur :</label><br> <input
-								type="text" name="descriptionSector" th:value="${sector.descriptionSector}" id="descriptionSector"
-								class="form-control"> <span
-								class="text-danger" th:errors="${sector.descriptionSector}"></span>
+							<label for="descriptionSector">Description du secteur :</label><br>
+							<input type="text" name="descriptionSector"
+								th:value="${sector.descriptionSector}" id="descriptionSector"
+								class="form-control"> <span class="text-danger"
+								th:errors="${sector.descriptionSector}"></span>
 						</div>
 						<button type="submit" id="submit" name="submit"
 							class="btn btn-primary pull-right">Enregistrer</button>

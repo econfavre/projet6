@@ -8,4 +8,6 @@ import com.projet_6.entity.Member;
 
 public interface MemberRepository extends JpaRepository<Member, String> {
 	// public Page<Produit> findByDesignationContains(String mc, Pageable pageable);
+
+	public Member findByUsername(String username);
 }
