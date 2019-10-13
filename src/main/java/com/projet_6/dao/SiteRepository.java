@@ -9,5 +9,5 @@ import com.projet_6.entity.Site;
 public interface SiteRepository extends JpaRepository<Site, Long> {
 	public Page<Site> findByNameSiteContains(String mc, Pageable pageable);
 
-	public Page<Site> findByName(String nameSite);
+	// public Page<Site> findByName(String nameSite);
 }

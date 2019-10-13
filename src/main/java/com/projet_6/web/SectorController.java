@@ -81,7 +81,9 @@ public class SectorController {
 		System.out.println(bindingResult);
 		if (bindingResult.hasErrors())
 			return "CreationSector";
-		sector.setSite("namesite");
+		// sector.setSite(siteRepository.findByName(.getId()));
+		System.out.println(sector);
+		System.out.println(model);
 		sectorRepository.save(sector);
 		return "redirect:/sector"; // on redirige vers une nouvelle page de confirmation que l'on doit creee dan
 	}

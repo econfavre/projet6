@@ -3,17 +3,12 @@ package com.projet_6.entity;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
-
-import org.springframework.web.multipart.MultipartFile;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Topo implements Serializable {
@@ -29,28 +24,30 @@ public class Topo implements Serializable {
 	@NotNull
 	private String topoName;
 
-	@ManyToOne(fetch = FetchType.LAZY, optional = false)
-	@JoinColumn(name = "member.username", nullable = false)
-	@JsonIgnore
+	@ManyToOne
+	@JoinColumn(name = "username", nullable = false)
 	private Member member;
 
 	@NotNull
 	private String topoDescription;
 
-	// Upload files.
-	@NotNull
-	private MultipartFile[] fileDatas;
+//	// Upload files.
+//	@NotNull
+//	private MultipartFile[] fileDatas;
+
+	private String topoFile;
 
 	public Topo() {
 		super();
 	}
 
-	public Topo(Long topoId, String topoName, String topoDescription, MultipartFile[] fileDatas, Member member) {
+	public Topo(Long topoId, String topoName, String topoDescription, String topoFile, Member member) {
 		super();
 		this.topoId = topoId;
 		this.topoName = topoName;
 		this.topoDescription = topoDescription;
-		this.fileDatas = fileDatas;
+		// this.fileDatas = fileDatas;
+		this.topoFile = topoFile;
 		this.member = member;
 	}
 
@@ -70,22 +67,6 @@ public class Topo implements Serializable {
 		this.topoName = topoName;
 	}
 
-	public String getTopoDescription() {
-		return topoDescription;
-	}
-
-	public void setDescription(String topoDescription) {
-		this.topoDescription = topoDescription;
-	}
-
-	public MultipartFile[] getFileDatas() {
-		return fileDatas;
-	}
-
-	public void setFileDatas(MultipartFile[] fileDatas) {
-		this.fileDatas = fileDatas;
-	}
-
 	public Member getMember() {
 		return member;
 	}
@@ -94,4 +75,33 @@ public class Topo implements Serializable {
 		this.member = member;
 	}
 
+	public String getTopoDescription() {
+		return topoDescription;
+	}
+
+//	public MultipartFile[] getFileDatas() {
+//		return fileDatas;
+//	}
+//
+//	public void setFileDatas(MultipartFile[] fileDatas) {
+//		this.fileDatas = fileDatas;
+//	}
+
+	public void setTopoDescription(String topoDescription) {
+		this.topoDescription = topoDescription;
+	}
+
+	public String getTopoFile() {
+		return topoFile;
+	}
+
+	public void setTopoFile(String topoFile) {
+		this.topoFile = topoFile;
+	}
+
+	@Override
+	public String toString() {
+		return "Topo [topoId=" + topoId + ", topoName=" + topoName + ", member=" + member + ", topoDescription="
+				+ topoDescription + ", topoFile=" + topoFile + "]";
+	}
 }

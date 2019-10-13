@@ -107,4 +107,10 @@ public class Site implements Serializable {
 		this.member = member;
 	}
 
+	@Override
+	public String toString() {
+		return "Site [siteId=" + siteId + ", nameSite=" + nameSite + ", orientation=" + orientation + ", country="
+				+ country + ", descriptionSite=" + descriptionSite + ", member=" + member + "]";
+	}
+
 }
