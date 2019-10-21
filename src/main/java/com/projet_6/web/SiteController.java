@@ -102,4 +102,5 @@ public class SiteController {
 		model.addAttribute("motCle", mc);
 		return "siteconnecte";
 	}
+
 }

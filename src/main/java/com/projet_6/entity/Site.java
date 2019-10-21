@@ -35,14 +35,12 @@ public class Site implements Serializable {
 	@NotBlank
 	private String descriptionSite;
 
-//	@ManyToOne(fetch = FetchType.LAZY, optional = false)
-//	@JoinColumn(name = "member_Id", nullable = false)
-//	@JsonIgnore
-//	private Member member;
-
 	@ManyToOne
 	@JoinColumn(name = "username", nullable = false)
 	private Member member;
+
+//	@OneToMany(fetch = FetchType.LAZY, mappedBy = "site")
+//	private List<Sector> sectors;
 
 	public Site() {
 		super();

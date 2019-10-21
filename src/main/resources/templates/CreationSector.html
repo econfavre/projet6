@@ -29,9 +29,8 @@
 							D'UN NOUVEAU SECTEUR</h3>
 						<div class="form-group">
 							<label for="nameSite">Nom du site :</label><br> 
-							<select>
-								<option th:each="n:${listNameSite}" th:value="${sector.nameSite}"
-									th:text="${n.nameSite}"></option>
+							<select name="nameSite" th:value="${sector.nameSite}">
+								<option th:each="n : ${listNameSite}" th:text="${n.nameSite}"></option>
 							</select>
 						</div>
 						<div class="form-group">

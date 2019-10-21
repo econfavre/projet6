@@ -78,14 +78,12 @@ public class SectorController {
 
 	@RequestMapping(value = "/saveNewSector", method = RequestMethod.POST)
 	public String save(@Valid Sector sector, BindingResult bindingResult, Model model) {
-		System.out.println(bindingResult);
+		System.out.println(sector.getNameSite());
 		if (bindingResult.hasErrors())
 			return "CreationSector";
 		// sector.setSite(siteRepository.findByName(.getId()));
-		System.out.println(sector);
-		System.out.println(model);
 		sectorRepository.save(sector);
-		return "redirect:/sector"; // on redirige vers une nouvelle page de confirmation que l'on doit creee dan
+		return "redirect:/homeconnecte"; // on redirige vers une nouvelle page de confirmation que l'on doit creee dan
 	}
 
 	@RequestMapping(value = "/saveEditSectorForm", method = RequestMethod.POST)

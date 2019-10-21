@@ -27,6 +27,12 @@
 						<br style="clear: both">
 						<h3 style="margin-bottom: 25px; text-align: center;">CREATION
 							D'UNE NOUVELLE VOIE</h3>
+							<div class="form-group">
+							<label for="nameSector">Nom du site :</label><br> 
+							<select name="nameSector" th:value="${way.nameSector}">
+								<option th:each="s : ${listNameSector}" th:text="${s.nameSector}"></option>
+							</select>
+						</div>
 						<div class="form-group">
 							<label for="nameWay">Nom de la voie :</label><br> <input
 								type="text" name="nameWay" th:value="${way.nameWay}"

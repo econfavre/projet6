@@ -29,10 +29,8 @@ public class Sector implements Serializable {
 	private String descriptionSector;
 
 //	@ManyToOne(fetch = FetchType.LAZY, optional = false)
-//	@JoinColumn(name = "site.siteId", nullable = false)
+//	@JoinColumn(name = "nameSite", nullable = false)
 //	@JsonIgnore
-//	private Site site;
-
 	private String nameSite;
 
 	public Sector() {
@@ -45,7 +43,6 @@ public class Sector implements Serializable {
 		this.nameSector = nameSector;
 		this.descriptionSector = descriptionSector;
 		this.nameSite = nameSite;
-		// this.site = site;
 	}
 
 	public Long getSectorId() {
@@ -71,14 +68,6 @@ public class Sector implements Serializable {
 	public void setDescriptionSector(String descriptionSector) {
 		this.descriptionSector = descriptionSector;
 	}
-
-//	public Site getSite() {
-//		return site;
-//	}
-//
-//	public void setSite(Site site) {
-//		this.site = site;
-//	}
 
 	public String getNameSite() {
 		return nameSite;
